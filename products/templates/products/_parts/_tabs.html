@@ -1,0 +1,146 @@
+{% load static %}
+<!-- =--------------------------------------= Start Details Tabs Partition =------------------= -->
+<section class="details__tabs wrapper">
+	<div class="details__tabs__tabs">
+		<span class="detail__tab__tab detail__tab__tab__active" data-target="#info">Additional Info</span>
+		<span class="detail__tab__tab" data-target="#reviews">Reviews (25)</span>
+	</div>
+	<div class="details__tabs__content">
+		<div class="detail__tab__content detail__tab__content__active" id="info" content>
+			<table class="info__tab__table">
+				<tr>
+					<th>Stand Up</th>
+					<td>Lorem ipsum dolor sit amet, consectetur.</td>
+				</tr>
+				<tr>
+					<th>Folded (W/O) Wheels</th>
+					<td>Lorem ipsum dolor sit.</td>
+				</tr>
+				<tr>
+					<th>Folded (W/O) Wheels</th>
+					<td>Lorem, ipsum dolor.</td>
+				</tr>
+				<tr>
+					<th>Door Pass Through</th>
+					<td>35</td>
+				</tr>
+				<tr>
+					<th>Frame</th>
+					<td>Carbon Fiber</td>
+				</tr>
+				<tr>
+					<th>Weight (W/O) Wheels</th>
+					<td>36 Tons</td>
+				</tr>
+				<tr>
+					<th>Weight Capacity</th>
+					<td>85 Tons</td>
+				</tr>
+				<tr>
+					<th>Width</th>
+					<td>55&deg;</td>
+				</tr>
+				<tr>
+					<th>Lorem ipsum dolor sit amet consectetur.</th>
+					<td>55 - 96 cm</td>
+				</tr>
+				<tr>
+					<th>Wheels</th>
+					<td>Lorem ipsum dolor, sit amet consectetur.</td>
+				</tr>
+				<tr>
+					<th>Seat &and; Back Height</th>
+					<td>43.5 cm</td>
+				</tr>
+				<tr>
+					<th>Head Room (Inside Canopy)</th>
+					<td>Lorem, ipsum, dolor.</td>
+				</tr>
+				<tr>
+					<th>Colors</th>
+					<td>Gray, White, Black, Dark Blue, Dark Green, Bumblebee</td>
+				</tr>
+				<tr>
+					<th>Sizes</th>
+					<td>XXLarge, XLarge, Large, Medium, Small</td>
+				</tr>
+			</table>
+		</div>
+		<div class="detail__tab__content" id="reviews" content>
+			<div class="reviews__wrapper display__grid">
+				<div class="review">
+					<div>
+						<img src="{% static 'images/Avatar-01.jpg' %}" class="review__image" />
+						<h4 class="review__title">Jacky Chan</h4>
+					</div>
+					<div class="review__data">
+						<div class="review__stars">
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+						</div>
+						<p class="review__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, libero!</p>
+						<span class="review__date">October 6, 1973 at 06:00 AM </span>
+					</div>
+				</div>
+				<div class="review">
+					<div>
+						<img src="{% static 'images/Avatar-02.jpg' %}" class="review__image" />
+						<h4 class="review__title">Emily Plunt</h4>
+					</div>
+					<div class="review__data">
+						<div class="review__stars">
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+						</div>
+						<p class="review__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, libero!</p>
+						<span class="review__date">October 6, 1973 at 06:00 AM </span>
+					</div>
+				</div>
+				<div class="review">
+					<div>
+						<img src="{% static 'images/Avatar-03.jpg' %}" class="review__image" />
+						<h4 class="review__title">John Cena</h4>
+					</div>
+					<div class="review__data">
+						<div class="review__stars">
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+							<i class="fi fi-br-star"></i>
+						</div>
+						<p class="review__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis, libero!</p>
+						<span class="review__date">October 6, 1973 at 06:00 AM </span>
+					</div>
+				</div>
+			</div>
+			<div class="review__form">
+				<h4 class="review__form__title">Add a Review</h4>
+				<div class="review__form__stars">
+					<i class="fi fi-br-star"></i>
+					<i class="fi fi-br-star"></i>
+					<i class="fi fi-br-star"></i>
+					<i class="fi fi-br-star"></i>
+					<i class="fi fi-br-star"></i>
+				</div>
+				<form action="#" class="form display__grid">
+					<textarea class="form__input form__text__area" placeholder="Insert Your Rate..."></textarea>
+					<div class="form__group display__grid">
+						<input class="form__input" type="text" placeholder="Your Name..." />
+						<input class="form__input" type="email" placeholder="Your EMail..." />
+					</div>
+					<div class="btn__form">
+						<button class="btn">Submit Review</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =--------------------------------------= End Details Tabs Partition =------------------= -->

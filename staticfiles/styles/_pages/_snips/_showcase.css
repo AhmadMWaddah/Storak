@@ -1,0 +1,74 @@
+
+/* =--------------------------------------= ShowCase Partition Styles =------------------= */
+.showcase .showcase__wrapper {
+	grid-template-columns: repeat(4, 1fr);
+	margin: auto;
+}
+@media screen and (max-width: 1400px) {
+	.showcase .showcase__wrapper {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media screen and (max-width: 992px) {
+	.showcase .showcase__wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media screen and (max-width: 768px) {
+	.showcase .showcase__wrapper {
+		grid-template-columns: 100%;
+	}
+}
+.showcase .showcase__wrapper .showcase__column .partition__title {
+	font-size: 1rem;
+	border-bottom: 0.15rem solid #e3e9e2;
+	padding-bottom: 0.75rem;
+	margin-bottom: 2.5rem;
+	position: relative;
+}
+.showcase .showcase__wrapper .showcase__column .partition__title:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -1.3px;
+	width: 50px;
+	height: 2px;
+	background: #088179;
+}
+.showcase .showcase__wrapper .showcase__column .showcase__item {
+	display: flex;
+	align-items: center;
+	column-gap: 1.5rem;
+}
+@media screen and (max-width: 350px) {
+	.showcase .showcase__wrapper .showcase__column .showcase__item {
+		column-gap: 1rem;
+	}
+}
+.showcase .showcase__wrapper .showcase__column .showcase__item:not(:last-child) {
+	margin-bottom: 1.5rem;
+}
+.showcase .showcase__wrapper .showcase__column .showcase__item .showcase__image__box .showcase__image {
+	width: 86px;
+}
+@media screen and (max-width: 350px) {
+	.showcase .showcase__wrapper .showcase__column .showcase__item .showcase__image__box .showcase__image {
+		width: 70px;
+	}
+}
+.showcase .showcase__wrapper .showcase__column .showcase__item .showcase__content {
+	width: calc(100% - 110px);
+}
+@media screen and (max-width: 350px) {
+	.showcase .showcase__wrapper .showcase__column .showcase__item .showcase__content {
+		width: calc(100% - 86px);
+	}
+}
+.showcase .showcase__wrapper .showcase__column .showcase__item .showcase__content .showcase__title {
+	font-size: 0.875rem;
+	font-weight: 500;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-bottom: 0.5rem;
+}

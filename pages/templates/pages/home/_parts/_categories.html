@@ -1,0 +1,48 @@
+{% load static %}
+<section class="categories partition wrapper">
+	<h3 class="partition__title">
+		<span>Popular</span> Categories
+	</h3>			
+	<div class="categories__wrapper swiper" id="categories-wrapper">
+		<div class="swiper-wrapper swiper__wrapper">
+			<a href="Pages/Shop.html" class="category__item swiper-slide">
+				<img src="{% static 'images/Category-01.jpg' %}" class="category__image" />
+				<h3 class="category__title">T-Shirts</h3>
+			</a>
+			<a href="Pages/Shop.html" class="category__item swiper-slide">
+				<img src="{% static 'images/Category-02.jpg' %}" class="category__image" />
+				<h3 class="category__title">Bags</h3>
+			</a>
+			<a href="Pages/Shop.html" class="category__item swiper-slide">
+				<img src="{% static 'images/Category-03.jpg' %}" class="category__image" />
+				<h3 class="category__title">Sandals</h3>
+			</a>
+			<a href="Pages/Shop.html" class="category__item swiper-slide">
+				<img src="{% static 'images/Category-04.jpg' %}" class="category__image" />
+				<h3 class="category__title">Scarf Caps</h3>
+			</a>
+			<a href="Pages/Shop.html" class="category__item swiper-slide">
+				<img src="{% static 'images/Category-05.jpg' %}" class="category__image" />
+				<h3 class="category__title">Shoes</h3>
+			</a>
+			<a href="Pages/Shop.html" class="category__item swiper-slide">
+				<img src="{% static 'images/Category-06.jpg' %}" class="category__image" />
+				<h3 class="category__title">PillowCases</h3>
+			</a>
+			<a href="Pages/Shop.html" class="category__item swiper-slide">
+				<img src="{% static 'images/Category-07.jpg' %}" class="category__image" />
+				<h3 class="category__title">JumpSuit</h3>
+			</a>
+			<a href="Pages/Shop.html" class="category__item swiper-slide">
+				<img src="{% static 'images/Category-08.jpg' %}" class="category__image" />
+				<h3 class="category__title">Hats</h3>
+			</a>
+		</div>
+		<div class="swiper-button-next" id="categories-swiper-button-next">
+			<i class="fi fi-br-angle-small-right"></i>
+		</div>
+		<div class="swiper-button-prev" id="categories-swiper-button-prev">
+			<i class="fi fi-br-angle-small-left"></i>
+		</div>
+	</div>
+</section>

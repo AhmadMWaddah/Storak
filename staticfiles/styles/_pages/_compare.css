@@ -1,0 +1,64 @@
+/* =--------------------------------------= Compare Page Styles =------------------= */
+.compare .compare__table tr th {
+	padding: 0.5rem;
+	border: 1px solid #e3e9e2;
+	color: #90908e;
+	font-size: 0.875rem;
+}
+@media screen and (max-width: 350px) {
+	.compare .compare__table tr th {
+		display: block;
+	}
+}
+.compare .compare__table tr td {
+	padding: 0.5rem;
+	border: 1px solid #e3e9e2;
+	text-align: center;
+}
+@media screen and (max-width: 768px) {
+	.compare .compare__table tr td {
+		display: block;
+	}
+}
+.compare .compare__table tr td .table__title {
+	font-size: 0.875rem;
+	color: #088179;
+}
+.compare .compare__table tr td .table__price {
+	font-size: 0.875rem;
+}
+.compare .compare__table tr td p {
+	font-size: 0.875rem;
+	max-width: 250px;
+	margin-inline: auto;
+}
+.compare .compare__table tr td .compare__colors {
+	justify-content: center;
+}
+.compare .compare__table tr td .color__list {
+	display: flex;
+	column-gap: 0.25rem;
+}
+.compare .compare__table tr td .color__list .color__link {
+	border-radius: 50%;
+	width: 26px;
+	height: 26px;
+	display: block;
+}
+.compare .compare__table tr td .table__availability {
+	font-size: 0.875rem;
+	color: #088179;
+}
+.compare .compare__table tr td .table__availability__red {
+	color: #990f02;
+}
+.compare .compare__table tr td .table__weight {
+	font-size: 0.875rem;
+}
+.compare .compare__table tr td .table__dimensions {
+	font-size: 0.875rem;
+}
+.compare .compare__table tr td .table__trash {
+	font-size: 0.875rem;
+	color: #90908e;
+}

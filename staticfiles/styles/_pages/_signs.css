@@ -1,0 +1,35 @@
+/* =--------------------------------------= SignUp - SignIn Page Styles =------------------= */
+.signup__signin .signup__signin__wrapper {
+	grid-template-columns: repeat(1, 1fr);
+	align-items: flex-start;
+	margin: auto;
+}
+@media screen and (max-width: 992px) {
+	.signup__signin .signup__signin__wrapper {
+		grid-template-columns: 1fr;
+	}
+}
+.signup__signin .signup__signin__wrapper .sign__Up {
+	border: 1px solid #e3e9e2;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	width: 70%;
+	margin: 0 auto;
+}
+@media screen and (max-width: 992px) {
+	.signup__signin .signup__signin__wrapper .sign__Up {
+		padding: 1.25rem;
+	}
+}
+.signup__signin .signup__signin__wrapper .sign__in {
+	border: 1px solid #e3e9e2;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	width: 70%;
+	margin: 0 auto;
+}
+@media screen and (max-width: 992px) {
+	.signup__signin .signup__signin__wrapper .sign__in {
+		padding: 1.25rem;
+	}
+}

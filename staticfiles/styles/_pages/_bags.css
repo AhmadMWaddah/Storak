@@ -1,0 +1,112 @@
+/* =--------------------------------------= Bags Page Styles =------------------= */
+.bags {
+	margin: auto;
+}
+.bags .bag__actions {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.5rem;
+}
+.bags .divider {
+	position: relative;
+	text-align: center;
+	margin-block: 3rem;
+}
+.bags .divider:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	border-top: 2px solid #e3e9e2;
+}
+.bags .divider i {
+	color: #90908e;
+	background: white;
+	font-size: 1.25rem;
+	padding-inline: 1.25rem;
+	position: relative;
+	z-index: 10;
+}
+.bags .bag__group {
+	grid-template-columns: repeat(2, 1fr);
+	align-items: flex-start;
+	/* =--------= max-width: 992px =----= */
+}
+@media screen and (max-width: 992px) {
+	.bags .bag__group {
+		grid-template-columns: 1fr;
+		row-gap: 2.75rem;
+	}
+}
+.bags .bag__group div .group__shipping .partition__title {
+	font-size: 1.125rem;
+	margin-bottom: 1rem;
+}
+.bags .bag__group div .group__shipping .form__group {
+	/* =--------= max-width: 576px =----= */
+}
+@media screen and (max-width: 576px) {
+	.bags .bag__group div .group__shipping .form__group {
+		grid-template-columns: 1fr;
+	}
+}
+.bags .bag__group div .group__discount {
+	margin-top: 3rem;
+}
+.bags .bag__group div .group__discount .partition__title {
+	font-size: 1.125rem;
+	margin-bottom: 1rem;
+}
+.bags .bag__group div .group__discount .discount__form .form__group {
+	align-items: center;
+	/* =--------= max-width: 576px =----= */
+}
+@media screen and (max-width: 576px) {
+	.bags .bag__group div .group__discount .discount__form .form__group {
+		grid-template-columns: 1fr;
+	}
+}
+.bags .bag__group .group__total {
+	border: 1px solid #e3e9e2;
+	border-radius: 0.25rem;
+	padding: 4rem 2rem;
+}
+.bags .bag__group .group__total .partition__title {
+	font-size: 1.125rem;
+	margin-bottom: 1rem;
+}
+.bags .bag__group .group__total .bags__total__table {
+	margin-bottom: 1rem;
+	/* =--------= max-width: 576px =----= */
+}
+@media screen and (max-width: 576px) {
+	.bags .bag__group .group__total .bags__total__table {
+		padding: 1.25rem;
+	}
+}
+.bags .bag__group .group__total .bags__total__table tr td {
+	border: 1px solid #e3e9e2;
+	padding: 0.75rem 0.5rem;
+	width: 50%;
+	/* =--------= max-width: 350px =----= */
+}
+@media screen and (max-width: 350px) {
+	.bags .bag__group .group__total .bags__total__table tr td {
+		display: block;
+		width: 100%;
+	}
+}
+.bags .bag__group .group__total .bags__total__table tr td .bags__total__title {
+	font-size: 0.875rem;
+}
+.bags .bag__group .group__total .bags__total__table tr td .bags__total__price {
+	color: #088179;
+	font-weight: 700;
+}
+.bags .bag__group .group__total .btn {
+	display: inline-flex;
+	height: 100%;
+}

@@ -1,0 +1,91 @@
+/* =--------------------------------------= CheckOuts Page Styles =------------------= */
+.checkout .checkout__wrapper {
+	grid-template-columns: repeat(2, 1fr);
+	margin: auto;
+}
+@media screen and (max-width: 992px) {
+	.checkout .checkout__wrapper {
+		grid-template-columns: 1fr;
+	}
+}
+.checkout .checkout__wrapper .checkout__group:nth-child(2) {
+	border: 1px solid #e3e9e2;
+	padding: 2rem;
+	border-right: 0.5rem;
+}
+@media screen and (max-width: 1200px) {
+	.checkout .checkout__wrapper .checkout__group:nth-child(2) {
+		padding: 1.5rem;
+	}
+}
+@media screen and (max-width: 576px) {
+	.checkout .checkout__wrapper .checkout__group:nth-child(2) {
+		padding: 1.25rem;
+	}
+}
+.checkout .checkout__wrapper .checkout__group .partition__title {
+	font-size: 1.125rem;
+}
+.checkout .checkout__wrapper .checkout__group .order__table tr th {
+	border: 1px solid #e3e9e2;
+	padding: 0.5rem;
+	text-align: center;
+	color: #212121;
+	font-size: 0.875rem;
+}
+@media screen and (max-width: 576px) {
+	.checkout .checkout__wrapper .checkout__group .order__table tr th {
+		display: none;
+	}
+}
+.checkout .checkout__wrapper .checkout__group .order__table tr td {
+	border: 1px solid #e3e9e2;
+	padding: 0.5rem;
+	text-align: center;
+}
+@media screen and (max-width: 576px) {
+	.checkout .checkout__wrapper .checkout__group .order__table tr td {
+		display: block;
+	}
+}
+.checkout .checkout__wrapper .checkout__group .order__table tr td .table__title {
+	font-size: 0.875rem;
+	color: #088179;
+}
+.checkout .checkout__wrapper .checkout__group .order__table tr td .order__subtitle {
+	font-size: 0.875rem;
+}
+.checkout .checkout__wrapper .checkout__group .order__table tr td .table__quantity {
+	font-size: 0.875rem;
+}
+.checkout .checkout__wrapper .checkout__group .order__table tr td .order__image {
+	width: 80px;
+}
+.checkout .checkout__wrapper .checkout__group .order__table tr td .order__final__total {
+	color: #088179;
+	font-size: 1.125rem;
+	font-weight: 700;
+}
+.checkout .checkout__wrapper .checkout__group .form .checkout__title {
+	font-size: 0.875rem;
+}
+.checkout .checkout__wrapper .checkout__group .payment__methods {
+	margin-block: 2.5rem 2.75rem;
+}
+@media screen and (max-width: 576px) {
+	.checkout .checkout__wrapper .checkout__group .payment__methods {
+		margin-block: 2.25rem 2.5rem;
+	}
+}
+.checkout .checkout__wrapper .checkout__group .payment__methods .payment__title {
+	margin-bottom: 1.5rem;
+}
+.checkout .checkout__wrapper .checkout__group .payment__methods .payment__option {
+	margin-bottom: 1rem;
+}
+.checkout .checkout__wrapper .checkout__group .payment__methods .payment__option .payment__input {
+	accent-color: #088179;
+}
+.checkout .checkout__wrapper .checkout__group .payment__methods .payment__option .payment__label {
+	font-size: 0.875rem;
+}

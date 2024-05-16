@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	{% include "_parts/_head_tag.html" %}
+
+	<title>AMW Storak | {% block title %}{% endblock title %}</title>
+
+</head>
+<body>
+
+	{% include "_parts/_header.html" %}
+	
+	<!-- =--------------------------------------= Start Main Partition =------------------= -->
+	<main class="main">
+
+		{% block content %}
+
+		{% endblock content %}
+
+	</main>
+	<!-- =--------------------------------------= End Main Partition =------------------= -->
+
+	{% include "_parts/_footer.html" %}
+
+	{% include "_parts/_scripts_tags.html" %}
+
+</body>
+</html>

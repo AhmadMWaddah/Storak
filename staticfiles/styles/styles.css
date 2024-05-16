@@ -1,0 +1,23 @@
+@import url("_parts/_fonts.css");
+
+@import url("_parts/_global_resets.css");
+
+@import url("_parts/_components.css");
+
+@import url("_parts/_utilities.css");
+
+@import url("_pages/_home.css");
+
+@import url("_pages/_shop.css");
+
+@import url("_pages/_details.css");
+
+@import url("_pages/_bags.css");
+
+@import url("_pages/_signs.css");
+
+@import url("_pages/_checkouts.css");
+
+@import url("_pages/_compare.css");
+
+@import url("_pages/_accounts.css");

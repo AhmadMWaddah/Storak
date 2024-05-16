@@ -1,0 +1,66 @@
+{% load static %}
+<!-- =--------------------------------------= Start Header Partition =------------------= -->
+<header class="header">
+	<div class="header__top">
+		<div class="header__wrapper wrapper">
+			<div class="header__contact">
+				<span style="margin-right: 1.5rem;">(+20)-1141591695</span>
+				<span>Our Location</span>
+			</div>
+			<p class="header__alert__news">Lorem ipsum dolor sit, amet consectetur.</p>
+			<div class="header__top__action__Signs">
+				<a class="header__top__action" href="{% url 'Humans:SignInUrl' %}" style="margin-inline: 0.6rem;">Sign In</a> / 
+				<a class="header__top__action" href="{% url 'Humans:SignUpUrl' %}" style="margin-inline: 0.6rem;">Sign Up</a>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar wrapper">
+		<a href="{% url 'Pages:HomeUrl' %}" class="navbar__logo">
+			<img src="{% static 'images/Logo.svg' %}" class="navbar__logo__image" />
+		</a>
+		<div class="navbar__menu" id="navbar-menu">
+			<div class="navbar__menu__top">
+				<a href="{% url 'Pages:HomeUrl' %}" class="navbar__menu__logo">
+					<img src="{% static 'images/Logo.svg' %}" />
+				</a>
+				<div class="navbar__close" id="navbar-close">
+					<i class="fi fi-br-square-x"></i>
+				</div>
+			</div>
+			<ul class="navbar__list">
+				<li class="navbar__item">
+					<a href="{% url 'Pages:HomeUrl' %}" class="navbar__link navbar__link__active">Home</a>
+				</li>
+				<li class="navbar__item">
+					<a href="{% url 'Products:AllProductsUrl' %}" class="navbar__link">Shop</a>
+				</li>
+				<li class="navbar__item">
+					<a href="{% url 'Humans:AccountUrl' %}" class="navbar__link">Account</a>
+				</li>
+				<li class="navbar__item">
+					<a href="{% url 'Products:CompareProductsUrl' %}" class="navbar__link">Compare</a>
+				</li>
+			</ul>
+			<div class="header__search">
+				<input class="form__input" type="text" placeholder="Search ..." />
+				<button class="search__btn">
+					<img src="{% static 'images/Icon-Search.png' %}" />
+				</button>
+			</div>
+		</div>
+		<div class="header__icons">
+			<a href="{% url 'Bags:WishListUrl' %}" class="header__icon__btn">
+				<img src="{% static 'images/Icon-Heart.svg' %}" />
+				<span class="count">2</span>
+			</a>
+			<a href="{% url 'Bags:BagUrl' %}" class="header__icon__btn">
+				<img src="{% static 'images/Icon-Bag.svg' %}" />
+				<span class="count">6</span>
+			</a>
+			<div class="navbar__toggle header__icon__btn" id="navbar-toggle">
+				<img src="{% static 'images/Menu-Burger.svg' %}" />
+			</div>
+		</div>
+	</nav>
+</header>
+<!-- =--------------------------------------= End Header Partition =------------------= -->

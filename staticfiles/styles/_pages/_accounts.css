@@ -1,0 +1,118 @@
+/* =--------------------------------------= Accounts Page Styles =------------------= */
+.accounts .accounts__wrapper {
+	grid-template-columns: 4fr 8fr;
+	margin: auto;
+}
+@media screen and (max-width: 1400px) {
+	.accounts .accounts__wrapper {
+		grid-template-columns: 3fr 9fr;
+	}
+}
+@media screen and (max-width: 992px) {
+	.accounts .accounts__wrapper {
+		grid-template-columns: 1fr;
+	}
+}
+@media screen and (max-width: 768px) {
+	.accounts .accounts__wrapper {
+		grid-template-columns: 100%;
+	}
+}
+.accounts .accounts__wrapper .accounts__tabs {
+	border: 1px solid #e3e9e2;
+	border-radius: 0.25rem;
+}
+.accounts .accounts__wrapper .accounts__tabs .account__tab {
+	padding: 1rem 2rem;
+	color: #212121;
+	font-size: 0.875rem;
+	display: flex;
+	align-items: center;
+	column-gap: 0.625rem;
+	cursor: pointer;
+}
+@media screen and (max-width: 1200px) {
+	.accounts .accounts__wrapper .accounts__tabs .account__tab {
+		padding: 0.75rem 1rem;
+	}
+}
+.accounts .accounts__wrapper .accounts__tabs .account__tab__active {
+	background: #088179;
+	color: white;
+}
+.accounts .accounts__wrapper .accounts__tabs .account__tab:not(:last-child) {
+	border-bottom: 1px solid #e3e9e2;
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content {
+	border: 1px solid #e3e9e2;
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content:not(.accounts .accounts__wrapper .accounts__contents .tab__content__active) {
+	display: none;
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .address {
+	padding: 1rem;
+	font-style: normal;
+	font-size: 0.875rem;
+	line-height: 1.5rem;
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .city {
+	padding: 1rem;
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .edit {
+	margin-bottom: 1rem;
+	margin-left: 1rem;
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .tab__header {
+	background: #ededed;
+	border-bottom: 1px solid #e3e9e2;
+	padding: 1rem;
+	font-size: 0.875rem;
+}
+@media screen and (max-width: 768px) {
+	.accounts .accounts__wrapper .accounts__contents .tab__content .tab__header {
+		padding: 0.75rem;
+	}
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body {
+	padding: 2rem;
+}
+@media screen and (max-width: 768px) {
+	.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body {
+		padding: 0.75rem;
+	}
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body .table__orders tr th {
+	color: #212121;
+	text-align: left;
+	border: 1px solid #e3e9e2;
+	padding: 0.5rem;
+	font-size: 0.875rem;
+}
+@media screen and (max-width: 576px) {
+	.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body .table__orders tr th {
+		display: none;
+	}
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body .table__orders tr td {
+	border: 1px solid #e3e9e2;
+	padding: 0.5rem;
+	font-size: 0.875rem;
+}
+@media screen and (max-width: 576px) {
+	.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body .table__orders tr td {
+		display: block;
+	}
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body .table__orders tr td .view__order {
+	color: #088179;
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body .table__orders tr .order__status__completed {
+	color: #088179;
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body .table__orders tr .order__status__canceled {
+	color: #990f02;
+}
+.accounts .accounts__wrapper .accounts__contents .tab__content .tab__body .table__orders tr .order__status__processing {
+	color: #a8a000;
+
+}

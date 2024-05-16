@@ -1,0 +1,28 @@
+/* =--------------------------------------= Categories Partition Styles =------------------= */
+.categories {
+	overflow: hidden;
+	margin: auto;
+}
+.categories .categories__wrapper {
+	overflow: initial;
+}
+.categories .categories__wrapper .swiper__wrapper .category__item {
+	text-align: center;
+	border: 0.15rem solid #cbe7cf;
+	padding: 0.625rem 0.625rem 1.25rem;
+	border-radius: 1.25rem;
+}
+@media screen and (max-width: 576px) {
+	.categories .categories__wrapper .swiper__wrapper .category__item {
+		padding-bottom: 1rem;
+	}
+}
+.categories .categories__wrapper .swiper__wrapper .category__item .category__image {
+	border-radius: 0.75rem;
+	margin-bottom: 1.25rem;
+	margin-bottom: 1rem;
+}
+.categories .categories__wrapper .swiper__wrapper .category__item .category__title {
+	color: #475c53;
+	font-size: 0.875rem;
+}

@@ -1,0 +1,12 @@
+/* =--------------------------------------= BreadCrumb Partition Styles =------------------= */
+.breadcrumb {
+	background: #ededed;
+	padding-block: 1.5rem;
+}
+.breadcrumb .breadcrumb__list {
+	column-gap: 0.75rem;
+}
+.breadcrumb .breadcrumb__list .breadcrumb__link {
+	color: #475c53;
+	font-size: 0.875rem;
+}

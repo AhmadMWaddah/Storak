@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}{{ page }}{% endblock title %}
+
+{% block content %}
+
+<!-- =--------------------------------------= Start BreadCrumbs Partition =------------------= -->
+{% include "../products/_parts/_breadcrumbs_two.html" %}
+<!-- =--------------------------------------= End BreadCrumbs Partition =------------------= -->
+
+<!-- =--------------------------------------= Start Details Partition =------------------= -->
+{% include "../products/_parts/_details.html" %}
+<!-- =--------------------------------------= End Details Partition =------------------= -->
+
+<!-- =--------------------------------------= Start Products Partition =------------------= -->
+{% include "../products/_parts/_tabs.html" %}
+<!-- =--------------------------------------= End Products Partition =------------------= -->
+
+<!-- =--------------------------------------= Start Products Partition =------------------= -->
+{% include "../products/_parts/_related.html" %}
+<!-- =--------------------------------------= End Products Partition =------------------= -->
+
+<!-- =--------------------------------------= Start NewsLetter Partition =------------------= -->
+{% include "../products/_parts/_newsletter.html" %}
+<!-- =--------------------------------------= End NewsLetter Partition =------------------= -->
+
+{% endblock content %}

@@ -1,0 +1,76 @@
+/* =--------------------------------------= Utilities Classes =------------------= */
+.wrapper {
+	max-width: 1320px;
+	margin-inline: auto;
+	padding-inline: 0.75rem;
+}
+@media (max-width: 1400px) {
+	.wrapper {
+		max-width: 1180px;
+		margin-inline: 1rem;
+		padding-inline: 1rem;
+	}
+}
+@media (max-width: 1200px) {
+	.wrapper {
+		max-width: 960px;
+	}
+}
+@media screen and (max-width: 992px) {
+	.wrapper {
+		max-width: 740px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.wrapper {
+		max-width: 540px;
+	}
+}
+
+.form {
+	row-gap: 1rem;
+}
+.form__group {
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+}
+.form__input {
+	border: 0.15rem solid #e3e9e2;
+	padding-inline: 1rem;
+	height: 45px;
+	border-radius: 0.25rem;
+	font-size: 0.875rem;
+}
+.form__text__area {
+	height: 200px;
+	padding-block: 1rem;
+	resize: none;
+}
+
+.display__flex,
+.header .navbar,
+.header .navbar__menu,
+.header .navbar__menu .navbar__list,
+.header .navbar .header__icons {
+	display: flex;
+	align-items: center;
+	column-gap: 0.5rem;
+}
+.display__grid {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.partition {
+	padding-block: 2rem;
+}
+.partition__large {
+	padding-block: 4rem;
+}
+.partition__title {
+	font-size: 1.375rem;
+	margin-bottom: 1.5rem;
+}
+.partition__title span {
+	color: #088179;
+}

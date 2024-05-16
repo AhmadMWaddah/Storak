@@ -1,0 +1,97 @@
+/* =--------------------------------------= Details Tabs Partition Styles =------------------= */
+.details__tabs .details__tabs__tabs {
+	display: flex;
+	column-gap: 1.75rem;
+	margin-bottom: 3rem;
+	/* =--------= max-width: 576px =----= */
+}
+@media screen and (max-width: 576px) {
+	.details__tabs .details__tabs__tabs {
+		column-gap: 1.25rem;
+		margin-bottom: 2.5rem;
+	}
+}
+.details__tabs .details__tabs__tabs .detail__tab__tab {
+	font-family: "Spartan", sans-serif;
+	font-size: 1.125rem;
+	font-weight: 600;
+	cursor: pointer;
+}
+.details__tabs .details__tabs__tabs .detail__tab__tab__active {
+	color: #088179;
+}
+.details__tabs .details__tabs__content .detail__tab__content:not(.details__tabs .details__tabs__content .detail__tab__content__active) {
+	display: none;
+}
+.details__tabs .details__tabs__content .detail__tab__content .info__tab__table tr th {
+	border: 1px solid #e3e9e2;
+	padding: 0.625rem 1.25rem;
+	font-weight: 500;
+	text-align-last: left;
+	/* =--------= max-width: 576px =----= */
+}
+@media screen and (max-width: 576px) {
+	.details__tabs .details__tabs__content .detail__tab__content .info__tab__table tr th {
+		display: block;
+	}
+}
+.details__tabs .details__tabs__content .detail__tab__content .info__tab__table tr td {
+	border: 1px solid #e3e9e2;
+	padding: 0.625rem 1.25rem;
+	color: #90908e;
+	/* =--------= max-width: 576px =----= */
+}
+@media screen and (max-width: 576px) {
+	.details__tabs .details__tabs__content .detail__tab__content .info__tab__table tr td {
+		display: block;
+	}
+}
+.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper {
+	margin-bottom: 3rem;
+	row-gap: 1.25rem;
+}
+.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper .review {
+	border-bottom: 1px solid #e3e9e2;
+	padding-bottom: 1.2rem;
+	display: flex;
+	align-items: flex-start;
+	column-gap: 1.5rem;
+	/* =--------= max-width: 576px =----= */
+}
+@media screen and (max-width: 576px) {
+	.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper .review {
+		column-gap: 1rem;
+	}
+}
+.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper .review:last-child {
+	padding-bottom: 3rem;
+}
+.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper .review .review__image {
+	width: 70px;
+	margin-bottom: 0.5rem;
+	border-radius: 50%;
+}
+.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper .review .review__title {
+	font-size: 0.6875rem;
+}
+.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper .review .review__data {
+	width: calc(100% - 94px);
+}
+.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper .review .review__data .review__stars {
+	color: #ffb300;
+	margin-bottom: 0.25rem;
+	font-size: 0.875rem;
+}
+.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper .review .review__data .review__description {
+	margin-bottom: 0.5rem;
+}
+.details__tabs .details__tabs__content .detail__tab__content .reviews__wrapper .review .review__data .review__date {
+	font-size: 0.875rem;
+}
+.details__tabs .details__tabs__content .detail__tab__content .review__form .review__form__title {
+	font-size: 1.125rem;
+	margin-bottom: 1rem;
+}
+.details__tabs .details__tabs__content .detail__tab__content .review__form .review__form__stars {
+	margin-bottom: 2rem;
+}

@@ -1,0 +1,51 @@
+/* =--------------------------------------= Globals & Resets =------------------= */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+body {
+	background: white;
+}
+
+body, textarea, input {
+	color: #475c53;
+	font-family: "Lato", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+textarea, input, button {
+	background: transparent;
+	border: none;
+	outline: none;
+}
+
+h1, h2, h3, h4 {
+	font-family: "Spartan", sans-serif;
+	color: #212121;
+	font-weight: 600;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.5rem;
+}
+
+img {
+	max-width: 100%;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}

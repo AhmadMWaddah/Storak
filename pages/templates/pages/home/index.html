@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}{{ page }}{% endblock title %}
+
+{% block content %}
+
+<!-- =--------------------------------------= Start Banner Partition =------------------= -->
+{% include "../home/_parts/_banner.html" %}
+<!-- =--------------------------------------= End Banner Partition =------------------= -->
+
+<!-- =--------------------------------------= Start Categories Partition =------------------= -->
+{% include "../home/_parts/_categories.html" %}
+<!-- =--------------------------------------= End Categories Partition =------------------= -->
+
+<!-- =--------------------------------------= Start Products Partition =------------------= -->
+{% include "../home/_parts/_products.html" %}
+<!-- =--------------------------------------= End Products Partition =------------------= -->
+
+<!-- =--------------------------------------= Start Deals Partition =------------------= -->
+{% include "../home/_parts/_deals.html" %}
+<!-- =--------------------------------------= End Deals Partition =------------------= -->
+
+<!-- =--------------------------------------= Start New Arrivals Partition =------------------= -->
+{% include "../home/_parts/_new_arrivals.html" %}
+<!-- =--------------------------------------= End New Arrivals Partition =------------------= -->
+
+<!-- =--------------------------------------= Start ShoeCases Partition =------------------= -->
+{% include "../home/_parts/_showcase.html" %}
+<!-- =--------------------------------------= End ShoeCases Partition =------------------= -->
+
+<!-- =--------------------------------------= Start NewsLetter Partition =------------------= -->
+{% include "../home/_parts/_newsletter.html" %}
+<!-- =--------------------------------------= End NewsLetter Partition =------------------= -->
+
+{% endblock content %}

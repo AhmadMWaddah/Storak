@@ -1,0 +1,82 @@
+/* =--------------------------------------= Footer Partition Styles =------------------= */
+.footer {
+	margin: auto;
+}
+.footer .footer__wrapper {
+	grid-template-columns: 4.5fr repeat(2, 2fr) 3.5fr;
+	padding-block: 2.5rem;
+}
+@media screen and (max-width: 992px) {
+	.footer .footer__wrapper {
+		grid-template-columns: repeat(2, 2fr);
+	}
+}
+@media screen and (max-width: 768px) {
+	.footer .footer__wrapper {
+		grid-template-columns: 100%;
+	}
+}
+.footer .footer__wrapper .footer__content .footer__sub__title {
+	color: #90908e;
+	font-size: 0.875rem;
+	margin-block: 1.025rem 0.625rem;
+}
+.footer .footer__wrapper .footer__content .footer__description {
+	margin-bottom: 0.25rem;
+}
+.footer .footer__wrapper .footer__content .footer__description span {
+	font-weight: 600;
+}
+.footer .footer__wrapper .footer__content .footer__social .footer__sub__title {
+	margin-top: 1.875rem;
+}
+.footer .footer__wrapper .footer__content .footer__social .footer__social__links {
+	column-gap: 0.25rem;
+}
+.footer .footer__wrapper .footer__content .footer__social .footer__social__links .footer__social__icon {
+	width: 20px;
+	overflow: 0.7;
+}
+.footer .footer__wrapper .footer__content .footer__title {
+	font-size: 1.125rem;
+	margin-block: 1rem 1.25rem;
+}
+@media screen and (max-width: 576px) {
+	.footer .footer__wrapper .footer__content .footer__title {
+		margin-top: 0.25rem;
+	}
+}
+.footer .footer__wrapper .footer__content .footer__links .footer__link {
+	color: #212121;
+	font-size: 0.875rem;
+	margin-bottom: 1rem;
+	display: block;
+	transition: all 0.38s linear;
+}
+.footer .footer__wrapper .footer__content .footer__links .footer__link:hover {
+	color: #088179;
+	margin-left: 0.25rem;
+}
+.footer .footer__wrapper .footer__content .footer__logo .footer__image {
+	width: 120px;
+}
+.footer .footer__bottom {
+	display: flex;
+	justify-content: space-between;
+	padding-block: 1.25rem;
+	border-top: 0.15rem solid #e3e9e2;
+}
+@media screen and (max-width: 576px) {
+	.footer .footer__bottom {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+.footer .footer__bottom .copyright {
+	color: #90908e;
+	font-size: 0.875rem;
+}
+.footer .footer__bottom .creator {
+	color: #90908e;
+	font-size: 0.875rem;
+}

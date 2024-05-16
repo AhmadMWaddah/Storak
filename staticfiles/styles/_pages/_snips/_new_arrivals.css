@@ -1,0 +1,115 @@
+
+/* =--------------------------------------= New Arrivals Partition Styles =------------------= */
+.new__arrivals {
+	overflow: hidden;
+	margin: auto;
+}
+.new__arrivals .new__arrivals__wrapper {
+	overflow: initial;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item {
+	border: 0.15rem solid #cbe7cf;
+	transition: all 0.38s linear;
+	border-radius: 1.5rem;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item:hover {
+	box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item:hover .new__arrival__banner .new__arrival__actions {
+	opacity: 1;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item:hover .new__arrival__banner .new__arrival__images .new__arrival__image {
+	transform: scale(1.1);
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item:hover .new__arrival__banner .new__arrival__images .new__arrival__image__default {
+	opacity: 0;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item:hover .new__arrival__banner .new__arrival__images .new__arrival__image__hover {
+	opacity: 1;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner {
+	padding: 0.625rem 0.75rem 0.75rem;
+	position: relative;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner .new__arrival__images {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	border-radius: 1.25rem;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner .new__arrival__images .new__arrival__image {
+	border-radius: 0.75rem;
+	margin-bottom: 1.25rem;
+	vertical-align: middle;
+	transition: all 0.38s linear;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner .new__arrival__images .new__arrival__image__hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner .new__arrival__actions {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	column-gap: 0.5rem;
+	opacity: 0;
+	transition: all 0.38s linear;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner .new__arrival__badge {
+	position: absolute;
+	left: 1.25rem;
+	top: 1.25rem;
+	background: #088179;
+	color: white;
+	padding: 0.25rem 0.625rem;
+	border-radius: 2.5rem;
+	font-size: 0.6875rem;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner .new__arrival__badge__light__pink {
+	background: #ff75a1;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner .new__arrival__badge__light__green {
+	background: #9abcae;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner .new__arrival__badge__light__orange {
+	background: #ffac75;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__banner .new__arrival__badge__light__blue {
+	background: #a1cae2;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__content {
+	padding: 0 1.25rem 1.125rem;
+	position: relative;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__content .new__arrival__category {
+	color: #90908e;
+	font-size: 0.75rem;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__content .new__arrival__name {
+	font-size: 1rem;
+	margin-block: 0.75rem 0.5rem;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__content .new__arrival__stars {
+	font-size: 0.75rem;
+	color: #ffb300;
+	margin-bottom: 0.75rem;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__content .new__arrival__price .new__price {
+	color: #088179;
+	font-size: 1.125rem;
+	font-weight: 600;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__content .new__arrival__price .old__price {
+	color: #90908e;
+	font-size: 0.875rem;
+	text-decoration: line-through;
+}
+.new__arrivals .new__arrivals__wrapper .swiper__wrapper .new__arrival__item .new__arrival__content .bag__button {
+	position: absolute;
+	bottom: 1.6rem;
+	right: 1.25rem;
+}

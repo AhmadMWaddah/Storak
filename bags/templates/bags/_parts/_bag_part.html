@@ -1,0 +1,197 @@
+{% load static %}
+<!-- =--------------------------------------= Start Bags Partition =------------------= -->
+<section class="bags wrapper partition__large">
+	<div class="table__wrapper">
+		<table class="table">
+			<tr>
+				<th>Image</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>SubTotal</th>
+				<th>Actions</th>
+			</tr>
+			<tr>
+				<td>
+					<img src="{% static 'images/Product-02-01.jpg' %}" alt="" class="table__image">
+				</td>
+				<td>
+					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
+					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
+				</td>
+				<td>
+					<span class="table__price">&dollar;764.55</span>
+				</td>
+				<td>
+					<input type="number" class="table__quantity" value="5" />
+				</td>
+				<td>
+					<span class="table__sub__total">&dollar;6546.78</span>
+				</td>
+				<td>
+					<i class="fi fi-br-trash-xmark table__trash"></i>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="{% static 'images/Product-05-01.jpg' %}" alt="" class="table__image">
+				</td>
+				<td>
+					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
+					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
+				</td>
+				<td>
+					<span class="table__price">&dollar;764.55</span>
+				</td>
+				<td>
+					<input type="number" class="table__quantity" value="5" />
+				</td>
+				<td>
+					<span class="table__sub__total">&dollar;6546.78</span>
+				</td>
+				<td>
+					<i class="fi fi-br-trash-xmark table__trash"></i>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="{% static 'images/Product-07-01.jpg' %}" alt="" class="table__image">
+				</td>
+				<td>
+					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
+					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
+				</td>
+				<td>
+					<span class="table__price">&dollar;764.55</span>
+				</td>
+				<td>
+					<input type="number" class="table__quantity" value="5" />
+				</td>
+				<td>
+					<span class="table__sub__total">&dollar;6546.78</span>
+				</td>
+				<td>
+					<i class="fi fi-br-trash-xmark table__trash"></i>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="{% static 'images/Product-09-01.jpg' %}" alt="" class="table__image">
+				</td>
+				<td>
+					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
+					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
+				</td>
+				<td>
+					<span class="table__price">&dollar;764.55</span>
+				</td>
+				<td>
+					<input type="number" class="table__quantity" value="5" />
+				</td>
+				<td>
+					<span class="table__sub__total">&dollar;6546.78</span>
+				</td>
+				<td>
+					<i class="fi fi-br-trash-xmark table__trash"></i>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="{% static 'images/Product-13-01.jpg' %}" alt="" class="table__image">
+				</td>
+				<td>
+					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
+					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
+				</td>
+				<td>
+					<span class="table__price">&dollar;764.55</span>
+				</td>
+				<td>
+					<input type="number" class="table__quantity" value="5" />
+				</td>
+				<td>
+					<span class="table__sub__total">&dollar;6546.78</span>
+				</td>
+				<td>
+					<i class="fi fi-br-trash-xmark table__trash"></i>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="bag__actions">
+		<a href="#" class="btn btn__medium display__flex">
+			<i class="fi fi-br-shuffle"></i> Update Bag
+		</a>
+		<a href="{% url 'Products:AllProductsUrl' %}" class="btn btn__medium display__flex">
+			<i class="fi fi-br-shopping-bag"></i> Continue Shopping
+		</a>
+	</div>
+	<div class="divider">
+		<i class="fi fi-br-fingerprint"></i>
+	</div>
+	<div class="bag__group display__grid">
+		<div>
+			<div class="group__shipping">
+				<h3 class="partition__title">Calculate Shipping</h3>
+				<form action="#" class="form display__grid">
+					<input type="text" class="form__input" placeholder="District - Country" />
+					<div class="form__group display__grid">
+						<input type="text" class="form__input" placeholder="City" />
+						<input type="text" class="form__input" placeholder="Postal Code" />
+					</div>
+					<div class="form__btn">
+						<button class="btn display__flex btn__small">
+							<i class="fi fi-br-shuffle"></i> Calculate
+						</button>
+					</div>
+				</form>
+			</div>
+			<div class="group__discount">
+				<h3 class="partition__title">Apply Discount</h3>
+				<form action="#" class="form display__grid discount__form">
+					<div class="form__group display__grid">
+						<input type="text" class="form__input" placeholder="Enter Discount" />
+						<div class="form__btn">
+							<button class="btn display__flex btn__small">
+								<i class="fi fi-br-ticket"></i> Apply Discount
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="group__total">
+			<h3 class="partition__title">Bag Total</h3>
+			<table class="bags__total__table">
+				<tr>
+					<td>
+						<span class="bags__total__title">Sub Total</span>
+					</td>
+					<td>
+						<span class="bags__total__price">&dollar;435.68</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="bags__total__title">Shipping</span>
+					</td>
+					<td>
+						<span class="bags__total__price">&dollar;250.45</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span class="bags__total__title">Total</span>
+					</td>
+					<td>
+						<span class="bags__total__price">&dollar;5598.75</span>
+					</td>
+				</tr>
+			</table>
+			<a href="{% url 'Bags:CheckOutUrl' %}" class="btn display__flex btn__medium">
+				<i class="fi fi-br-box-alt"></i> Go To Checkout
+			</a>
+		</div>
+	</div>
+</section>
+<!-- =--------------------------------------= End Bags Partition =------------------= -->

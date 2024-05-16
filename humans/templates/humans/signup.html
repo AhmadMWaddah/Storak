@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}{{ page }}{% endblock title %}
+
+{% block content %}
+
+<!-- =--------------------------------------= Start BreadCrumbs Partition =------------------= -->
+{% include "../humans/_parts/_breadcrumbs.html" %}
+<!-- =--------------------------------------= End BreadCrumbs Partition =------------------= -->
+
+<!-- =--------------------------------------= Start Sign Up Partition =------------------= -->
+{% include "../humans/_parts/_signup_part.html" %}
+<!-- =--------------------------------------= End Sign Up Partition =------------------= -->
+
+<!-- =--------------------------------------= Start NewsLetter Partition =------------------= -->
+{% include "../humans/_parts/_newsletter.html" %}
+<!-- =--------------------------------------= End NewsLetter Partition =------------------= -->
+
+{% endblock content %}
