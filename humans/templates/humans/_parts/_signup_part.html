@@ -4,12 +4,70 @@
 <section class="signup__signin partition__large">
 	<div class="signup__signin__wrapper wrapper display__grid">
 		<div class="sign__Up">
-			<h3 class="partition__title">Sign Up For Account</h3>
-			<form action="#" class="form display__grid">
-				<input type="text" class="form__input" placeholder="Your Username..." />
-				<input type="email" class="form__input" placeholder="Your EMail..." />
-				<input type="password" class="form__input" placeholder="Your Password..." />
-				<input type="password" class="form__input" placeholder="Confirm Password..." />
+			<h3 class="partition__title">{{ page }}</h3>
+			<form class="form display__grid" method="POST" novalidate>
+				{% csrf_token %}
+
+				<strong>
+					{{ form.email.label }}
+				</strong>
+				{{ form.email }}
+				{% if form.email.errors%}
+					{% for error in form.email.errors %}
+					    <p style="padding:1rem; color:red;">{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+				
+				<strong>
+					{{ form.first_name.label }}
+				</strong>
+				{{ form.first_name }}
+				{% if form.first_name.errors%}
+					{% for error in form.first_name.errors %}
+					    <p style="padding:1rem; color:red;">{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+				
+				<strong>
+					{{ form.last_name.label }}
+				</strong>
+				{{ form.last_name }}
+				{% if form.last_name.errors%}
+					{% for error in form.last_name.errors %}
+					    <p style="padding:1rem; color:red;">{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+				
+				<strong>
+					{{ form.user_name.label }}
+				</strong>
+				{{ form.user_name }}
+				{% if form.user_name.errors%}
+					{% for error in form.user_name.errors %}
+					    <p style="padding:1rem; color:red;">{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+				
+				<strong>
+					{{ form.password1.label }}
+				</strong>
+				{{ form.password1 }}
+				{% if form.password1.errors%}
+					{% for error in form.password1.errors %}
+					    <p style="padding:1rem; color:red;">{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+				
+				<strong>
+					{{ form.password2.label }}
+				</strong>
+				{{ form.password2 }}
+				{% if form.password2.errors%}
+					{% for error in form.password2.errors %}
+					    <p style="padding:1rem; color:red;">{{ error }}</p>
+					{% endfor %}
+				{% endif %}
+
 				<div class="form__btn">
 					<button class="btn">Sign Up</button>
 				</div>

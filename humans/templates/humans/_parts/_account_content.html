@@ -1,0 +1,101 @@
+{% load static %}
+<!-- =--------------------------------------= Start Account Content Partition =------------------= -->
+<div class="accounts__contents">
+	<div class="tab__content tab__content__active" id="dashboard-tab" content>
+		<h3 class="tab__header">My DashBoard</h3>
+		<div class="tab__body">
+			<p class="description">Lorem ipsum dolor sit amet consectetur adipisicing, elit. Distinctio nihil minima, omnis dolorem maiores magnam aperiam culpa dolore necessitatibus, repellendus architecto amet dolorum quo laudantium vel qui vero sunt pariatur repellat rem labore, placeat incidunt.</p>
+		</div>
+	</div>
+	<div class="tab__content" id="orders-tab" content>
+		<h3 class="tab__header">My Orders</h3>
+		<div class="tab__body">
+			<table class="table__orders">
+				<tr>
+					<th>Order</th>
+					<th>Date</th>
+					<th>Status</th>
+					<th>Total</th>
+					<th>Actions</th>
+				</tr>
+				<tr>
+					<td>#45632</td>
+					<td>16th of April 1985</td>
+					<td class="order__status__completed">Completed</td>
+					<td>&dollar;1452.58</td>
+					<td>
+						<a href="#" class="view__order">View</a>
+					</td>
+				</tr>
+				<tr>
+					<td>#45855</td>
+					<td>21th of December 1995</td>
+					<td class="order__status__canceled">Canceled</td>
+					<td>&dollar;356.20</td>
+					<td>
+						<a href="#" class="view__order">View</a>
+					</td>
+				</tr>
+				<tr>
+					<td>#56985</td>
+					<td>01st January 2006</td>
+					<td class="order__status__completed">Completed</td>
+					<td>&dollar;192.58</td>
+					<td>
+						<a href="#" class="view__order">View</a>
+					</td>
+				</tr>
+				<tr>
+					<td>#65456</td>
+					<td>24th May 2011</td>
+					<td class="order__status__completed">Completed</td>
+					<td>&dollar;3652.95</td>
+					<td>
+						<a href="#" class="view__order">View</a>
+					</td>
+				</tr>
+				<tr>
+					<td>#78956</td>
+					<td>03rd July 2021</td>
+					<td class="order__status__processing">Processing</td>
+					<td>&dollar;8895.10</td>
+					<td>
+						<a href="#" class="view__order">View</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="tab__content" id="profile-tab" content>
+		<h3 class="tab__header">Update Profile</h3>
+		<div class="tab__body">
+			<form action="#" class="form display__grid">
+				<input type="text" class="form__input" placeholder="UserName ..." />
+				<div class="form__btn">
+					<button class="btn btn__medium" >Update UserName</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="tab__content" id="address-tab" content>
+		<h3 class="tab__header">My Addresses</h3>
+		<address class="address">
+			Issac Fahey, 9 Kelly Rapid,<br /> 
+			Robertsonport, Port Louis,<br /> 
+			United Kingdom, YO7 1SP
+		</address>
+		<p class="city">New York</p>
+		<button class="btn btn__small edit" >Edit</button>
+	</div>
+	<div class="tab__content" id="change-tab" content>
+		<h3 class="tab__header">Change Password</h3>
+		<div class="form__btn">
+			<a href="{% url 'Humans:HumanPasswordChangeUrl' %}" class="btn btn__medium btn__logout">Change Password</a>
+		</div>
+		<h3 class="tab__header">Log Out</h3>
+		<div class="form__btn">
+			<a href="{% url 'Humans:HumanSignOutUrl' %}" class="btn btn__medium btn__logout">Log Out</a>
+		</div>
+	</div>
+</div>
+<!-- =--------------------------------------= End Account Content Partition =------------------= -->

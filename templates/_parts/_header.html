@@ -9,8 +9,14 @@
 			</div>
 			<p class="header__alert__news">Lorem ipsum dolor sit, amet consectetur.</p>
 			<div class="header__top__action__Signs">
-				<a class="header__top__action" href="{% url 'Humans:SignInUrl' %}" style="margin-inline: 0.6rem;">Sign In</a> / 
-				<a class="header__top__action" href="{% url 'Humans:SignUpUrl' %}" style="margin-inline: 0.6rem;">Sign Up</a>
+				{% if request.user.is_authenticated %}
+				<a href="{{ request.user.get_absolute_url }}" class="header__top__accounts">
+					{{ request.user.full_name }} - {{ request.user.user_name }}
+				</a>
+				{% else %}
+				<a class="header__top__action" href="{% url 'Humans:HumanSignInUrl' %}" style="margin-inline: 0.6rem;">Sign In</a> / 
+				<a class="header__top__action" href="{% url 'Humans:HumanSignUpUrl' %}" style="margin-inline: 0.6rem;">Sign Up</a>					
+				{% endif %}
 			</div>
 		</div>
 	</div>
@@ -35,11 +41,17 @@
 					<a href="{% url 'Products:AllProductsUrl' %}" class="navbar__link">Shop</a>
 				</li>
 				<li class="navbar__item">
-					<a href="{% url 'Humans:AccountUrl' %}" class="navbar__link">Account</a>
-				</li>
-				<li class="navbar__item">
 					<a href="{% url 'Products:CompareProductsUrl' %}" class="navbar__link">Compare</a>
 				</li>
+				{% if request.user.is_authenticated %}
+				<li class="navbar__item">
+					<a href="{{ request.user.get_absolute_url }}" class="navbar__link">Account</a>
+				</li>					
+				{% else %}
+				<li class="navbar__item">
+					<a href="{% url 'Humans:HumanSignInUrl' %}" class="navbar__link">Sign In</a>
+				</li>		
+				{% endif %}
 			</ul>
 			<div class="header__search">
 				<input class="form__input" type="text" placeholder="Search ..." />

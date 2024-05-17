@@ -4,12 +4,27 @@
 <section class="signup__signin partition__large">
 	<div class="signup__signin__wrapper wrapper display__grid">
 		<div class="sign__in">
-			<h3 class="partition__title">Sign In</h3>
-			<form action="#" class="form display__grid">
-				<input type="email" class="form__input" placeholder="Your EMail..." />
-				<input type="password" class="form__input" placeholder="Your Password..." />
+			<h3 class="partition__title">{{ page }}</h3>
+			<form method="POST" class="form display__grid" novalidate>
+				{% csrf_token %}
+				<strong>
+					{{ form.username.label }}
+				</strong>
+				{{ form.username }}
+				<strong>
+					{{ form.password.label }}
+				</strong>
+				{{ form.password }}
+				{% if form.non_field_errors %}
+				{% for error in form.non_field_errors %}
+				<p style="padding:1rem; color:red;">{{ error }}</p>
+				{% endfor %}
+				{% endif %}
 				<div class="form__btn">
-					<button class="btn">Sign In</button>
+					<button class="btn btn__medium btn__logout">Sign In</button>
+				</div>
+				<div class="form__btn">
+					<a href="{% url 'Humans:HumanPasswordResetUrl' %}" class="btn btn__medium btn__logout">Forgot Password</a>
 				</div>
 			</form>
 		</div>
