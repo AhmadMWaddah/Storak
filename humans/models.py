@@ -26,6 +26,7 @@ class HumanManager(BaseUserManager):
         )
         user.set_password(password)
         user.save(using=self._db)
+        client = Client.objects.create(user=user)
         return user
 
     def create_superuser(self, email, first_name, last_name, user_name, password=None):
@@ -86,10 +87,3 @@ class Human(AbstractBaseUser, PermissionsMixin):
 
     def get_absolute_url(self):
         return reverse("Humans:HumanDetailsUrl", args=[f"{self.slug}"])
-
-
-class Client(models.Model):
-    human = models.OneToOneField("Human", on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"{self.human.email} - {self.human.user_name}"

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import Human, Client
+from .models import Human
 
 
 @admin.register(Human)
@@ -22,11 +22,3 @@ class HumanAdmin(UserAdmin):
     ordering = [
         "user_name",
     ]
-
-
-@admin.register(Client)
-class ClientAdmin(admin.ModelAdmin):
-    list_display = [
-        "human",
-    ]
-    search_fields = ["human"]
