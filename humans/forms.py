@@ -66,7 +66,7 @@ class HumanSignUpForm(UserCreationForm):
         label="User Name",
     )
     password1 = forms.CharField(
-        widget=forms.TextInput(
+        widget=forms.PasswordInput(
             attrs={
                 "class": "form__input",
                 "placeholder": "Password ...",
@@ -77,7 +77,7 @@ class HumanSignUpForm(UserCreationForm):
         label="Password",
     )
     password2 = forms.CharField(
-        widget=forms.TextInput(
+        widget=forms.PasswordInput(
             attrs={
                 "class": "form__input",
                 "placeholder": "Confirm Password ...",
