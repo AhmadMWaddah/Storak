@@ -26,7 +26,6 @@ class HumanManager(BaseUserManager):
         )
         user.set_password(password)
         user.save(using=self._db)
-        client = Client.objects.create(user=user)
         return user
 
     def create_superuser(self, email, first_name, last_name, user_name, password=None):
