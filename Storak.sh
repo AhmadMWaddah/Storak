@@ -5,11 +5,6 @@ function POSTGRESQL() {
     echo "----------------- PostgreSQL Starting Finished. -----------------"
     echo "                               "
 }
-function FLAKE() {
-    flake8 .
-    echo "----------------- Flake8 Finished. -----------------"
-    echo "                               "
-}
 function COLLECTSTATIC() {
     python3 manage.py collectstatic --no-input
     echo "----------------- Flake8 Finished. -----------------"
@@ -34,7 +29,6 @@ function STORAK() {
     MAKEMIGRATIONS
     MIGRATE
     COLLECTSTATIC
-    FLAKE
     RUNSERVER
 }
 STORAK
