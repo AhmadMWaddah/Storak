@@ -15,7 +15,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "humans.apps.HumansConfig",
     "pages.apps.PagesConfig",
-    "categories.apps.CategoriesConfig",
     "products.apps.ProductsConfig",
     "bags.apps.BagsConfig",
     "orders.apps.OrdersConfig",
