@@ -23,6 +23,13 @@
 .header .header__top .header__wrapper .header__top__action {
 	color: #475c53;
 }
+.header .header__top .header__wrapper .header__top__action__Signs .header__top__accounts {
+	color: #088179;;
+	transition: all 0.38s linear;
+}
+.header .header__top .header__wrapper .header__top__action__Signs .header__top__accounts:hover {
+	color: #212121;
+}
 .header .navbar {
 	height: calc(4rem + 2.5rem);
 	justify-content: space-between;
