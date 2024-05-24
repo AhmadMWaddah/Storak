@@ -4,7 +4,7 @@ from django.contrib.auth.models import (
     BaseUserManager,
     PermissionsMixin,
 )
-from django.urls import reverse
+from django.urls import reverse_lazy
 from django.utils.text import slugify
 
 
@@ -85,4 +85,4 @@ class Human(AbstractBaseUser, PermissionsMixin):
         super(Human, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse("Humans:HumanDetailsUrl", args=[f"{self.slug}"])
+        return reverse_lazy("Humans:HumanDetailsUrl", args=[f"{self.slug}"])
