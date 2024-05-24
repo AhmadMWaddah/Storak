@@ -1,16 +1,29 @@
 {% load static %}
 <!-- =--------------------------------------= Start Products Grid Partition =------------------= -->
 <section class="products wrapper partition__large">
-	<p class="total__products">There Is <span>985</span> Products are found</p>
+	{% if products_count %}
+	<p class="total__products">There Is <span>{{ products_count }}</span> Products are found</p>
+	{% else %}
+	<p class="total__products">There Is <span>No</span> Products are found</p>
+	{% endif %}
 	<div class="products__wrapper display__grid">
+		{% for product in products %}
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-01-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-01-02.jpg' %}" class="product__image product__image__hover" />
+				<a href="{{ product.get_absolute_url }}" class="product__images">
+					{% if product.image %}
+					<img src="{{ product.image.url }}" class="product__image product__image__default" />
+					{% else %}
+					<img src="{% static 'images/Product-08-01' %}" class="product__image product__image__default" />
+					{% endif %}
+					{% if product.image_two %}
+					<img src="{{ product.image_two.url }}" class="product__image product__image__hover" />
+					{% else %}
+					<img src="{% static 'images/Product-08-02' %}" class="product__image product__image__default" />
+					{% endif %}
 				</a>
 				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
+					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
@@ -20,12 +33,21 @@
 						<i class="fi fi-br-shuffle"></i>
 					</a>
 				</div>
-				<div class="product__badge product__badge__light__pink">Sale</div>
+				{% if product.badge == "BEST_SELLER" %}
+				<div class="product__badge product__badge__light__pink">{{ product.badge }}</div>
+				{% elif product.badge == "FEATURED" %}
+				<div class="product__badge product__badge__light__green">{{ product.badge }}</div>
+				{% elif product.badge == "TRENDING" %}
+				<div class="product__badge product__badge__light__orange">{{ product.badge }}</div>
+				{% elif product.badge == "CLEARANCE" %}
+				<div class="product__badge product__badge__light__blue">{{ product.badge }}</div>
+				{% else %}
+				{% endif %}
 			</div>
 			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
+				<span class="product__category">{{ product.category }}</span>
+				<a href="{{ product.get_absolute_url }}">
+					<h3 class="product__name">{{ product.name }}</h3>
 				</a>
 				<div class="product__stars">
 					<i class="fi fi-br-star"></i>
@@ -35,612 +57,17 @@
 					<i class="fi fi-br-star"></i>
 				</div>
 				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
+					<span class="new__price">&dollar;{{ product.price }}</span>
+					{% if product.price_before %}
+					<span class="old__price">&dollar;{{ product.price_before }}</span>
+					{% endif %}
 				</div>
 				<a href="#" class="bag__button" aria-label="Add To Bag">
 					<i class="fi fi-br-shopping-bag-add"></i>
 				</a>
 			</div>
 		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-02-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-02-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__green">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-03-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-03-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__orange">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-04-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-04-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__blue">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-05-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-05-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__pink">-40&#37;</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-06-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-06-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__pink">-22&#37;</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-07-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-07-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__green">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-08-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-08-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-04-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-04-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__pink">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-05-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-05-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__green">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-13-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-13-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__orange">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-12-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-12-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__blue">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-02-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-02-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__pink">-40&#37;</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-10-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-10-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__pink">-22&#37;</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-07-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-07-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__green">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
-					<img src="{% static 'images/Product-08-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-08-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
+		{% endfor %}
 	</div>
 	<ul class="pagination">
 		<li>
@@ -665,4 +92,4 @@
 		</li>
 	</ul>
 </section>
-		<!-- =--------------------------------------= End Products Grid Partition =------------------= -->
+<!-- =--------------------------------------= End Products Grid Partition =------------------= -->

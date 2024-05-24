@@ -2,184 +2,96 @@
 <section class="showcase partition">
 	<div class="showcase__wrapper wrapper display__grid">
 		<div class="showcase__column">
-			<h3 class="partition__title">Hot Releases</h3>
+			<h3 class="partition__title">Best Seller</h3>
+			{% for best_seller in best_sellers %}
 			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-01.jpg' %}" class="showcase__image" />
+				<a href="{{ best_seller.get_absolute_url }}" class="showcase__image__box">
+					{% if best_seller.image.url %}
+					<img src="{{ best_seller.image.url }}" class="showcase__image" />
+					{% endif %}
 				</a>
 				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
+					<a href="{{ best_seller.get_absolute_url }}">
+						<h4 class="showcase__title">{{ best_seller.name }}</h4>
 					</a>
 					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
+						<span class="new__price">&dollar;{{ best_seller.price }}</span>
+						{% if best_seller.price_before %}
+						<span class="old__price">&dollar;{{ best_seller.price_before }}</span>
+						{% endif %}
 					</div>
 				</div>
 			</div>
-			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-02.jpg' %}" class="showcase__image" />
-				</a>
-				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
-					</a>
-					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
-					</div>
-				</div>
-			</div>
-			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-03.jpg' %}" class="showcase__image" />
-				</a>
-				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
-					</a>
-					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 		<div class="showcase__column">
-			<h3 class="partition__title">Deals & Outlet</h3>
+			<h3 class="partition__title">New Arrivals</h3>
+			{% for new_arrival in new_arrivals %}
 			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-04.jpg' %}" class="showcase__image" />
+				<a href="{{ new_arrival.get_absolute_url }}" class="showcase__image__box">
+					{% if new_arrival.image.url %}
+					<img src="{{ new_arrival.image.url }}" class="showcase__image" />
+					{% endif %}
 				</a>
 				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
+					<a href="{{ new_arrival.get_absolute_url }}">
+						<h4 class="showcase__title">{{ new_arrival.name }}</h4>
 					</a>
 					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
+						<span class="new__price">&dollar;{{ new_arrival.price }}</span>
+						{% if new_arrival.price_before %}
+						<span class="old__price">&dollar;{{ new_arrival.price_before }}</span>
+						{% endif %}
 					</div>
 				</div>
 			</div>
-			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-05.jpg' %}" class="showcase__image" />
-				</a>
-				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
-					</a>
-					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
-					</div>
-				</div>
-			</div>
-			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-06.jpg' %}" class="showcase__image" />
-				</a>
-				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
-					</a>
-					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 		<div class="showcase__column">
-			<h3 class="partition__title">Top Selling</h3>
+			<h3 class="partition__title">Featured</h3>
+			{% for featured in featureds %}
 			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-07.jpg' %}" class="showcase__image" />
+				<a href="{{ featured.get_absolute_url }}" class="showcase__image__box">
+					{% if featured.image.url %}
+					<img src="{{ featured.image.url }}" class="showcase__image" />
+					{% endif %}
 				</a>
 				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
+					<a href="{{ featured.get_absolute_url }}">
+						<h4 class="showcase__title">{{ featured.name }}</h4>
 					</a>
 					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
+						<span class="new__price">&dollar;{{ featured.price }}</span>
+						{% if featured.price_before %}
+						<span class="old__price">&dollar;{{ featured.price_before }}</span>
+						{% endif %}
 					</div>
 				</div>
 			</div>
-			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-08.jpg' %}" class="showcase__image" />
-				</a>
-				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
-					</a>
-					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
-					</div>
-				</div>
-			</div>
-			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-09.jpg' %}" class="showcase__image" />
-				</a>
-				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
-					</a>
-					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 		<div class="showcase__column">
-			<h3 class="partition__title">Trendy</h3>
+			<h3 class="partition__title">Trending</h3>
+			{% for trending in trendings %}
 			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-03.jpg' %}" class="showcase__image" />
+				<a href="{{ trending.get_absolute_url }}" class="showcase__image__box">
+					{% if trending.image.url %}
+					<img src="{{ trending.image.url }}" class="showcase__image" />
+					{% endif %}
 				</a>
 				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
+					<a href="{{ trending.get_absolute_url }}">
+						<h4 class="showcase__title">{{ trending.name }}</h4>
 					</a>
 					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
+						<span class="new__price">&dollar;{{ trending.price }}</span>
+						{% if trending.price_before %}
+						<span class="old__price">&dollar;{{ trending.price_before }}</span>
+						{% endif %}
 					</div>
 				</div>
 			</div>
-			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-08.jpg' %}" class="showcase__image" />
-				</a>
-				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
-					</a>
-					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
-					</div>
-				</div>
-			</div>
-			<div class="showcase__item">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="showcase__image__box">
-					<img src="{% static 'images/ShowCase-05.jpg' %}" class="showcase__image" />
-				</a>
-				<div class="showcase__content">
-					<a href="{% url 'Products:ProductDetailsUrl' %}">
-						<h4 class="showcase__title">Lorem ipsum dolor sit amet consectetur</h4>
-					</a>
-					<div class="showcase__price display__flex">
-						<span class="new__price">&dollar;4356.52</span>
-						<span class="old__price">&dollar;5632.45</span>
-					</div>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </section>
