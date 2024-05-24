@@ -8,12 +8,12 @@
 	<div class="products__wrapper display__grid">
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
+				<a href="{{ product.get_absolute_url }}" class="product__images">
 					<img src="{% static 'images/Product-02-01.jpg' %}" class="product__image product__image__default" />
 					<img src="{% static 'images/Product-02-02.jpg' %}" class="product__image product__image__hover" />
 				</a>
 				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
+					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
@@ -27,7 +27,7 @@
 			</div>
 			<div class="product__content">
 				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
+				<a href="{{ product.get_absolute_url }}">
 					<h3 class="product__name">Lorem ipsum dolor sit</h3>
 				</a>
 				<div class="product__stars">
@@ -48,12 +48,12 @@
 		</div>
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
+				<a href="{{ product.get_absolute_url }}" class="product__images">
 					<img src="{% static 'images/Product-05-01.jpg' %}" class="product__image product__image__default" />
 					<img src="{% static 'images/Product-05-02.jpg' %}" class="product__image product__image__hover" />
 				</a>
 				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
+					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
@@ -67,7 +67,7 @@
 			</div>
 			<div class="product__content">
 				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
+				<a href="{{ product.get_absolute_url }}">
 					<h3 class="product__name">Lorem ipsum dolor sit</h3>
 				</a>
 				<div class="product__stars">
@@ -88,12 +88,12 @@
 		</div>
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
+				<a href="{{ product.get_absolute_url }}" class="product__images">
 					<img src="{% static 'images/Product-08-01.jpg' %}" class="product__image product__image__default" />
 					<img src="{% static 'images/Product-08-02.jpg' %}" class="product__image product__image__hover" />
 				</a>
 				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
+					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
@@ -107,7 +107,7 @@
 			</div>
 			<div class="product__content">
 				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
+				<a href="{{ product.get_absolute_url }}">
 					<h3 class="product__name">Lorem ipsum dolor sit</h3>
 				</a>
 				<div class="product__stars">
@@ -128,12 +128,12 @@
 		</div>
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
+				<a href="{{ product.get_absolute_url }}" class="product__images">
 					<img src="{% static 'images/Product-01-01.jpg' %}" class="product__image product__image__default" />
 					<img src="{% static 'images/Product-01-02.jpg' %}" class="product__image product__image__hover" />
 				</a>
 				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
+					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
@@ -147,7 +147,7 @@
 			</div>
 			<div class="product__content">
 				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
+				<a href="{{ product.get_absolute_url }}">
 					<h3 class="product__name">Lorem ipsum dolor sit</h3>
 				</a>
 				<div class="product__stars">
@@ -168,12 +168,12 @@
 		</div>
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
+				<a href="{{ product.get_absolute_url }}" class="product__images">
 					<img src="{% static 'images/Product-10-01.jpg' %}" class="product__image product__image__default" />
 					<img src="{% static 'images/Product-10-02.jpg' %}" class="product__image product__image__hover" />
 				</a>
 				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
+					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
@@ -187,7 +187,7 @@
 			</div>
 			<div class="product__content">
 				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
+				<a href="{{ product.get_absolute_url }}">
 					<h3 class="product__name">Lorem ipsum dolor sit</h3>
 				</a>
 				<div class="product__stars">
@@ -208,12 +208,12 @@
 		</div>
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
+				<a href="{{ product.get_absolute_url }}" class="product__images">
 					<img src="{% static 'images/Product-11-01.jpg' %}" class="product__image product__image__default" />
 					<img src="{% static 'images/Product-11-02.jpg' %}" class="product__image product__image__hover" />
 				</a>
 				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
+					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
@@ -227,7 +227,7 @@
 			</div>
 			<div class="product__content">
 				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
+				<a href="{{ product.get_absolute_url }}">
 					<h3 class="product__name">Lorem ipsum dolor sit</h3>
 				</a>
 				<div class="product__stars">
@@ -248,12 +248,12 @@
 		</div>
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
+				<a href="{{ product.get_absolute_url }}" class="product__images">
 					<img src="{% static 'images/Product-12-01.jpg' %}" class="product__image product__image__default" />
 					<img src="{% static 'images/Product-12-02.jpg' %}" class="product__image product__image__hover" />
 				</a>
 				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
+					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
@@ -267,7 +267,7 @@
 			</div>
 			<div class="product__content">
 				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
+				<a href="{{ product.get_absolute_url }}">
 					<h3 class="product__name">Lorem ipsum dolor sit</h3>
 				</a>
 				<div class="product__stars">
@@ -288,12 +288,12 @@
 		</div>
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{% url 'Products:ProductDetailsUrl' %}" class="product__images">
+				<a href="{{ product.get_absolute_url }}" class="product__images">
 					<img src="{% static 'images/Product-13-01.jpg' %}" class="product__image product__image__default" />
 					<img src="{% static 'images/Product-13-02.jpg' %}" class="product__image product__image__hover" />
 				</a>
 				<div class="product__actions">
-					<a href="#" aria-label="Quick View">
+					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
@@ -306,7 +306,7 @@
 			</div>
 			<div class="product__content">
 				<span class="product__category">Clothing</span>
-				<a href="{% url 'Products:ProductDetailsUrl' %}">
+				<a href="{{ product.get_absolute_url }}">
 					<h3 class="product__name">Lorem ipsum dolor sit</h3>
 				</a>
 				<div class="product__stars">

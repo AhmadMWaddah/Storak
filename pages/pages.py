@@ -1,4 +1,5 @@
 from django.views.generic.base import TemplateView
+from products.models import Category, Product
 
 
 class HomeView(TemplateView):
@@ -6,7 +7,18 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        context["page"] = "Home"
+        context["categories"] = Category.objects.only()
+        context["products"] = Product.objects.only()
+        context["trendings"] = Product.objects.only().filter(badge="Trending")[:3]
+        context["featureds"] = Product.objects.only().filter(badge="Featured")[:3]
+        context["best_sellers"] = Product.objects.only().filter(badge="Best Seller")[:3]
+        context["new_arrivals"] = Product.objects.only().filter(badge="New Arrival")[:3]
+
+        context["trends_products"] = Product.objects.only().filter(badge="Trending")[:4]
+        context["feat_products"] = Product.objects.only().filter(badge="Trending")[:4]
+        context["best_products"] = Product.objects.only().filter(badge="Trending")[:4]
+
+        context["page_title"] = "Home"
         return context
 
 
@@ -15,7 +27,7 @@ class AboutView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AboutView, self).get_context_data(**kwargs)
-        context["page"] = "About Us"
+        context["page_title"] = "About Us"
         return context
 
 
@@ -24,7 +36,7 @@ class ContactView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ContactView, self).get_context_data(**kwargs)
-        context["page"] = "Contact Us"
+        context["page_title"] = "Contact Us"
         return context
 
 
@@ -33,5 +45,5 @@ class NotFoundView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(NotFoundView, self).get_context_data(**kwargs)
-        context["page"] = "404 Not Found"
+        context["page_title"] = "404 Not Found"
         return context
