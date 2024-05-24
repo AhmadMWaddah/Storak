@@ -168,3 +168,4 @@ Amara-Store-Template/
 storak-venv/
 media/
 static/
+migrations/
