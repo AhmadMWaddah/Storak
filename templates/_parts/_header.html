@@ -40,9 +40,6 @@
 				<li class="navbar__item">
 					<a href="{% url 'Products:AllProductsUrl' %}" class="navbar__link">Shop</a>
 				</li>
-				<li class="navbar__item">
-					<a href="{% url 'Products:CompareProductsUrl' %}" class="navbar__link">Compare</a>
-				</li>
 				{% if request.user.is_authenticated %}
 				<li class="navbar__item">
 					<a href="{{ request.user.get_absolute_url }}" class="navbar__link">Account</a>
