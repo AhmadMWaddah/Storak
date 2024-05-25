@@ -28,12 +28,3 @@ class ProductDetailsView(TemplateView):
         context = super(ProductDetailsView, self).get_context_data(**kwargs)
         context["page"] = "Product Details"
         return context
-
-
-class CompareProductsView(TemplateView):
-    template_name = "products/compare.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(CompareProductsView, self).get_context_data(**kwargs)
-        context["page"] = "Compare Products"
-        return context

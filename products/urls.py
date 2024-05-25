@@ -1,5 +1,5 @@
 from django.urls import path
-from .products import AllProductsView, ProductDetailsView, CompareProductsView
+from .products import AllProductsView, ProductDetailsView
 
 
 app_name = "Products"
@@ -7,5 +7,4 @@ app_name = "Products"
 urlpatterns = [
     path("all", AllProductsView.as_view(), name="AllProductsUrl"),
     path("details/<slug:slug>", ProductDetailsView.as_view(), name="ProductDetailsUrl"),
-    path("compare", CompareProductsView.as_view(), name="CompareProductsUrl"),
 ]

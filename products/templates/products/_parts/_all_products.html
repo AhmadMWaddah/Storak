@@ -29,9 +29,6 @@
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
 						<i class="fi fi-br-heart"></i>
 					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
 				</div>
 				{% if product.badge == "BEST_SELLER" %}
 				<div class="product__badge product__badge__light__pink">{{ product.badge }}</div>
