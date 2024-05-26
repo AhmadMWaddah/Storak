@@ -30,13 +30,13 @@
 						<i class="fi fi-br-heart"></i>
 					</a>
 				</div>
-				{% if product.badge == "BEST_SELLER" %}
+				{% if product.badge == "Best Seller" %}
 				<div class="product__badge product__badge__light__pink">{{ product.badge }}</div>
-				{% elif product.badge == "FEATURED" %}
+				{% elif product.badge == "Featured" %}
 				<div class="product__badge product__badge__light__green">{{ product.badge }}</div>
-				{% elif product.badge == "TRENDING" %}
+				{% elif product.badge == "Trending" %}
 				<div class="product__badge product__badge__light__orange">{{ product.badge }}</div>
-				{% elif product.badge == "CLEARANCE" %}
+				{% elif product.badge == "New Arrival" %}
 				<div class="product__badge product__badge__light__blue">{{ product.badge }}</div>
 				{% else %}
 				{% endif %}
@@ -66,27 +66,72 @@
 		</div>
 		{% endfor %}
 	</div>
+	{% if is_paginated %}
 	<ul class="pagination">
+		{% if page_obj.has_previous %}
 		<li>
-			<a href="" class="pagination__link pagination__link__active">01</a>
+			<a href="?page=1" class="pagination__link pagination__link__icon">First</a>
 		</li>
 		<li>
-			<a href="" class="pagination__link">02</a>
+			<a href="?page={{ page_obj.previous_page_number }}" class="pagination__link pagination__link__icon">
+				<i class="fi fi-br-angle-double-small-left"></i>
+			</a>
 		</li>
+		{% endif %}
+
 		<li>
-			<a href="" class="pagination__link">03</a>
+			<a href="{% url 'Products:AllProductsUrl' %}?page={{ page_num }}" class="pagination__link pagination__link__active">{{ page_obj.number }}</a>
 		</li>
+
+		{% if page_obj.has_next %}
 		<li>
-			<a href="" class="pagination__link">...</a>
-		</li>
-		<li>
-			<a href="" class="pagination__link">25</a>
-		</li>
-		<li>
-			<a href="" class="pagination__link pagination__link__icon">
+			<a href="?page={{ page_obj.next_page_number }}" class="pagination__link pagination__link__icon">
 				<i class="fi fi-br-angle-double-small-right"></i>
 			</a>
 		</li>
+		<li>
+			<a href="?page={{ page_obj.paginator.num_pages }}" class="pagination__link pagination__link__icon">Last</a>
+		</li>
+		{% endif %}
 	</ul>
+	{% endif %}
 </section>
 <!-- =--------------------------------------= End Products Grid Partition =------------------= -->
+
+<!--
+
+<li>
+	<a href="" class="pagination__link pagination__link__active">01</a>
+</li>
+<li>
+	<a href="" class="pagination__link">02</a>
+</li>
+<li>
+	<a href="" class="pagination__link">03</a>
+</li>
+<li>
+	<a href="" class="pagination__link">...</a>
+</li>
+<li>
+	<a href="" class="pagination__link">25</a>
+</li>
+<li>
+	<a href="" class="pagination__link pagination__link__icon">
+		<i class="fi fi-br-angle-double-small-right"></i>
+	</a>
+</li>
+
+
+{% if is_paginated %}
+<ul class="pagination">
+	{% for page_num in page_obj.paginator.page_range %}
+	<li>
+		<a {% if page_num == page_obj.number %}class="pagination__link pagination__link__active"{% endif %} href="{% url 'Products:AllProductsUrl' %}?page={{ page_num }}" class="pagination__link">{{ page_num }}</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+
+
+
+-->
