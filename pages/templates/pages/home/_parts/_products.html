@@ -26,9 +26,6 @@
 							<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
 								<i class="fi fi-br-heart"></i>
 							</a>
-							<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-								<i class="fi fi-br-shuffle"></i>
-							</a>
 						</div>
 						{% if trends_product.badge == "New Arrival" %}
 						<div class="product__badge product__badge__light__pink">{{ trends_product.badge }}</div>
@@ -87,9 +84,6 @@
 							<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
 								<i class="fi fi-br-heart"></i>
 							</a>
-							<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-								<i class="fi fi-br-shuffle"></i>
-							</a>
 						</div>
 						{% if feat_product.badge == "New Arrival" %}
 						<div class="product__badge product__badge__light__pink">{{ feat_product.badge }}</div>
@@ -147,9 +141,6 @@
 							</a>
 							<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
 								<i class="fi fi-br-heart"></i>
-							</a>
-							<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-								<i class="fi fi-br-shuffle"></i>
 							</a>
 						</div>
 						{% if best_product.badge == "New Arrival" %}
