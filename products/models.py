@@ -43,6 +43,9 @@ class Category(models.Model):
     class Meta:
         verbose_name = "Category"
         verbose_name_plural = "Categories"
+        ordering = [
+            "name",
+        ]
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -66,7 +69,7 @@ class Product(models.Model):
     description = models.TextField(default="", blank=True, null=True)
     sku = models.CharField(db_index=True, max_length=15, unique=True)
     inventory = models.IntegerField(default=0, validators=[MinValueValidator(0)])
-    in_stock = models.BooleanField(default=False)
+    in_stock = models.BooleanField(default=True)
     price_before = models.DecimalField(
         db_index=True, max_digits=6, decimal_places=2, blank=True, null=True
     )
@@ -87,6 +90,9 @@ class Product(models.Model):
     class Meta:
         verbose_name = "Product"
         verbose_name_plural = "Products"
+        ordering = [
+            "name",
+        ]
 
     def save(self, *args, **kwargs):
         if not self.slug:
