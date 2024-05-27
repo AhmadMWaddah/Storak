@@ -3,25 +3,31 @@
 <section class="details partition__large">
 	<div class="details__wrapper wrapper display__grid">
 		<div class="details__group">
-			<img src="{% static 'images/Product-07-02.jpg' %}" class="details__image" id="image-one" />
+			{% if product.image.url %}
+			<img src="{{ product.image.url }}" class="details__image" id="image-one" />
+			{% endif %}
 			<div class="details__thmbnails display__grid">
-				<img src="{% static 'images/Product-07-01.jpg' %}" class="details__thmbnail" />
-				<img src="{% static 'images/Product-07-02.jpg' %}" class="details__thmbnail" />
-				<img src="{% static 'images/Product-07-01.jpg' %}" class="details__thmbnail" />
+				{% if product.image_two.url %}
+				<img src="{{ product.image_two.url }}" class="details__thmbnail" />	
+				{% endif %}
+				{% if product.image.url %}
+				<img src="{{ product.image.url }}" class="details__thmbnail" />	
+				{% endif %}
 			</div>
 		</div>
 		<div class="details__group">
-			<h3 class="details__title">Ferrari Shirt</h3>
+			<h3 class="details__title">{{ product.name }}</h3>
 			<p class="details__brand">
-				Brands: 
-				<span>Ferrari</span>
+				Category: <span>{{ product.category }}</span>
 			</p>
 			<div class="details__price display__flex">
-				<span class="new__price">&dollar;768.85</span>
-				<span class="old__price">&dollar;832.75</span>
+				<span class="new__price">&dollar;{{ product.price }}</span>
+				{% if product.price_before %}
+				<span class="old__price">&dollar;{{ product.price_before }}</span>
 				<span class="save__price">20&#37; Off</span>
+				{% endif %}
 			</div>
-			<p class="short__description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga eum officia consequatur provident amet quo laborum iste magni animi earum inventore nemo, illum at. Fuga nostrum molestiae a ratione, autem!</p>
+			<p class="short__description">{{ product.description }}</p>
 			<ul class="product__list">
 				<li class="list__item display__flex">
 					<i class="fi fi-br-crown"></i>
@@ -77,21 +83,21 @@
 				</ul>
 			</div>
 			<div class="details__action">
-				<input type="number" value="5" class="quantity" />
-				<a href="#" class="btn btn__small">Add To Bag</a>
-				<a href="#" class="details__action__btn">
+				<input type="number" value="1" class="quantity" />
+				<a href="{% url 'Bags:BagUrl' %}" class="btn btn__small">Add To Bag</a>
+				<a href="{% url 'Bags:WishListUrl' %}" class="details__action__btn">
 					<i class="fi fi-br-heart"></i>
 				</a>
 			</div>
 			<ul class="details__meta">
 				<li class="meta__list display__flex">
-					<span>SKU:</span> ABCDEFGJLGK
+					<span>SKU:</span> {{ product.sku }}
 				</li>
 				<li class="meta__list display__flex">
-					<span>Tags:</span> Ferrari, Super Cars, Girls
+					<span>Badge:</span> {{ product.badge }}
 				</li>
 				<li class="meta__list display__flex">
-					<span>In Stock:</span> 31 Items In Stock
+					<span>In Stock:</span> {{ product.inventory }} Items In Stock
 				</li>
 			</ul>
 		</div>

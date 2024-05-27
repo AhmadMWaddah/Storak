@@ -1,4 +1,3 @@
-from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.core.paginator import Paginator
@@ -33,10 +32,14 @@ class AllProductsView(ListView):
         return context
 
 
-class ProductDetailsView(TemplateView):
+class ProductDetailsView(DetailView):
+    model = Product
     template_name = "products/details.html"
+    context_object_name = "product"
 
     def get_context_data(self, **kwargs):
         context = super(ProductDetailsView, self).get_context_data(**kwargs)
-        context["page_title"] = "Product Details"
+        context["product"] = self.get_object()
+        context["related_products"] = Product.objects.filter(badge=self.object.badge)
+        context["page_title"] = f"{self.get_object()} Details"
         return context

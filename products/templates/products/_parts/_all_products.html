@@ -78,11 +78,9 @@
 			</a>
 		</li>
 		{% endif %}
-
 		<li>
 			<a href="{% url 'Products:AllProductsUrl' %}?page={{ page_num }}" class="pagination__link pagination__link__active">{{ page_obj.number }}</a>
 		</li>
-
 		{% if page_obj.has_next %}
 		<li>
 			<a href="?page={{ page_obj.next_page_number }}" class="pagination__link pagination__link__icon">
@@ -97,41 +95,3 @@
 	{% endif %}
 </section>
 <!-- =--------------------------------------= End Products Grid Partition =------------------= -->
-
-<!--
-
-<li>
-	<a href="" class="pagination__link pagination__link__active">01</a>
-</li>
-<li>
-	<a href="" class="pagination__link">02</a>
-</li>
-<li>
-	<a href="" class="pagination__link">03</a>
-</li>
-<li>
-	<a href="" class="pagination__link">...</a>
-</li>
-<li>
-	<a href="" class="pagination__link">25</a>
-</li>
-<li>
-	<a href="" class="pagination__link pagination__link__icon">
-		<i class="fi fi-br-angle-double-small-right"></i>
-	</a>
-</li>
-
-
-{% if is_paginated %}
-<ul class="pagination">
-	{% for page_num in page_obj.paginator.page_range %}
-	<li>
-		<a {% if page_num == page_obj.number %}class="pagination__link pagination__link__active"{% endif %} href="{% url 'Products:AllProductsUrl' %}?page={{ page_num }}" class="pagination__link">{{ page_num }}</a>
-	</li>
-	{% endfor %}
-</ul>
-{% endif %}
-
-
-
--->
