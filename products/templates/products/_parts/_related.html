@@ -2,33 +2,43 @@
 <!-- =--------------------------------------= Start Related Product Partition =------------------= -->
 <section class="products wrapper partition__large">
 	<h3 class="partition__title">
-		<span>Related</span>
-		Products
+		<span>Related</span> Products
 	</h3>
 	<div class="products__wrapper display__grid">
+		{% for related_product in related_products %}
 		<div class="product__item">
 			<div class="product__banner">
-				<a href="{{ product.get_absolute_url }}" class="product__images">
-					<img src="{% static 'images/Product-02-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-02-02.jpg' %}" class="product__image product__image__hover" />
+				<a href="{{ related_product.get_absolute_url }}" class="product__images">
+					{% if related_product.image.url %}
+					<img src="{{ related_product.image.url }}" class="product__image product__image__default" />
+					{% endif %}
+					{% if related_product.image_two.url %}
+					<img src="{{ related_product.image_two.url }}" class="product__image product__image__hover" />
+					{% endif %}
 				</a>
 				<div class="product__actions">
-					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
+					<a href="{{ related_product.get_absolute_url }}" aria-label="Quick View">
 						<i class="fi fi-br-eye"></i>
 					</a>
 					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
 						<i class="fi fi-br-heart"></i>
 					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
 				</div>
-				<div class="product__badge product__badge__light__pink">Sale</div>
+				{% if related_product.badge == "Best Seller" %}
+				<div class="product__badge product__badge__light__pink">{{ related_product.badge }}</div>
+				{% elif related_product.badge == "Featured" %}
+				<div class="product__badge product__badge__light__green">{{ related_product.badge }}</div>
+				{% elif related_product.badge == "Trending" %}
+				<div class="product__badge product__badge__light__orange">{{ related_product.badge }}</div>
+				{% elif related_product.badge == "New Arrival" %}
+				<div class="product__badge product__badge__light__blue">{{ related_product.badge }}</div>
+				{% else %}
+				{% endif %}
 			</div>
 			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{{ product.get_absolute_url }}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
+				<span class="product__category">{{ related_product.category }}</span>
+				<a href="{{ related_product.get_absolute_url }}">
+					<h3 class="product__name">{{ related_product.name }}</h3>
 				</a>
 				<div class="product__stars">
 					<i class="fi fi-br-star"></i>
@@ -38,293 +48,17 @@
 					<i class="fi fi-br-star"></i>
 				</div>
 				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
+					<span class="new__price">&dollar;{{ related_product.price }}</span>
+					{% if related_product.price_before %}
+					<span class="old__price">&dollar;{{ related_product.price_before }}</span>
+					{% endif %}
 				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
+				<a href="{% url 'Bags:BagUrl' %}" class="bag__button" aria-label="Add To Bag">
 					<i class="fi fi-br-shopping-bag-add"></i>
 				</a>
 			</div>
 		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{{ product.get_absolute_url }}" class="product__images">
-					<img src="{% static 'images/Product-05-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-05-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__green">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{{ product.get_absolute_url }}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{{ product.get_absolute_url }}" class="product__images">
-					<img src="{% static 'images/Product-08-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-08-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__orange">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{{ product.get_absolute_url }}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{{ product.get_absolute_url }}" class="product__images">
-					<img src="{% static 'images/Product-01-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-01-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__blue">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{{ product.get_absolute_url }}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{{ product.get_absolute_url }}" class="product__images">
-					<img src="{% static 'images/Product-10-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-10-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__pink">-40&#37;</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{{ product.get_absolute_url }}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{{ product.get_absolute_url }}" class="product__images">
-					<img src="{% static 'images/Product-11-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-11-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__pink">-22&#37;</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{{ product.get_absolute_url }}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{{ product.get_absolute_url }}" class="product__images">
-					<img src="{% static 'images/Product-12-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-12-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-				<div class="product__badge product__badge__light__green">Sale</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{{ product.get_absolute_url }}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
-		<div class="product__item">
-			<div class="product__banner">
-				<a href="{{ product.get_absolute_url }}" class="product__images">
-					<img src="{% static 'images/Product-13-01.jpg' %}" class="product__image product__image__default" />
-					<img src="{% static 'images/Product-13-02.jpg' %}" class="product__image product__image__hover" />
-				</a>
-				<div class="product__actions">
-					<a href="{{ product.get_absolute_url }}" aria-label="Quick View">
-						<i class="fi fi-br-eye"></i>
-					</a>
-					<a href="{% url 'Bags:WishListUrl' %}" aria-label="Add To WishList">
-						<i class="fi fi-br-heart"></i>
-					</a>
-					<a href="{% url 'Products:CompareProductsUrl' %}" aria-label="Compare">
-						<i class="fi fi-br-shuffle"></i>
-					</a>
-				</div>
-			</div>
-			<div class="product__content">
-				<span class="product__category">Clothing</span>
-				<a href="{{ product.get_absolute_url }}">
-					<h3 class="product__name">Lorem ipsum dolor sit</h3>
-				</a>
-				<div class="product__stars">
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-					<i class="fi fi-br-star"></i>
-				</div>
-				<div class="product__price display__flex">
-					<span class="new__price">&dollar;465.55</span>
-					<span class="old__price">&dollar;680.20</span>
-				</div>
-				<a href="#" class="bag__button" aria-label="Add To Bag">
-					<i class="fi fi-br-shopping-bag-add"></i>
-				</a>
-			</div>
-		</div>
+		{% endfor %}
 	</div>
 </section>
 <!-- =--------------------------------------= End Related Product Partition =------------------= -->
