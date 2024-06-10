@@ -58,9 +58,9 @@
 			</div>
 		</div>
 		<div class="header__icons">
-			<a href="{% url 'Bags:BagUrl' %}" class="header__icon__btn">
+			<a href="{% url 'Bags:BagDetailsUrl' %}" class="header__icon__btn">
 				<img src="{% static 'images/Icon-Bag.svg' %}" />
-				<span class="count">6</span>
+				<span id="bag-items-count" class="count"></span>
 			</a>
 			<div class="navbar__toggle header__icon__btn" id="navbar-toggle">
 				<img src="{% static 'images/Menu-Burger.svg' %}" />

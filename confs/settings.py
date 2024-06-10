@@ -109,4 +109,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 AUTH_USER_MODEL = "humans.Human"
 
+CART_MODEL = "bags.BagItem"
+
+##  Development Mail Server
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

@@ -5,121 +5,41 @@
 		<table class="table">
 			<tr>
 				<th>Image</th>
-				<th>Name</th>
+				<th>Info</th>
 				<th>Price</th>
 				<th>Quantity</th>
 				<th>SubTotal</th>
 				<th>Actions</th>
 			</tr>
+			{% for item in bag_items %}
 			<tr>
 				<td>
-					<img src="{% static 'images/Product-02-01.jpg' %}" alt="" class="table__image">
+					{% if item.product.image.url %}
+					<img src="{{ item.product.image.url }}" alt="" class="table__image">
+					{% endif %}
 				</td>
 				<td>
-					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
-					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
+					<h3 class="table__title">{{ item.product.name }}</h3>
+					<p class="table__description">{{ item.product.description|truncatewords:15 }}</p>
 				</td>
 				<td>
-					<span class="table__price">&dollar;764.55</span>
+					<span class="table__price">&dollar;{{ item.product.price }}</span>
 				</td>
 				<td>
-					<input type="number" class="table__quantity" value="5" />
+					<input type="number" class="table__quantity" value="{{ item.quantity }}" />
 				</td>
 				<td>
-					<span class="table__sub__total">&dollar;6546.78</span>
+					<span class="table__sub__total">&dollar;{{ item.sub_total }}</span>
 				</td>
 				<td>
 					<i class="fi fi-br-trash-xmark table__trash"></i>
 				</td>
 			</tr>
-			<tr>
-				<td>
-					<img src="{% static 'images/Product-05-01.jpg' %}" alt="" class="table__image">
-				</td>
-				<td>
-					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
-					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
-				</td>
-				<td>
-					<span class="table__price">&dollar;764.55</span>
-				</td>
-				<td>
-					<input type="number" class="table__quantity" value="5" />
-				</td>
-				<td>
-					<span class="table__sub__total">&dollar;6546.78</span>
-				</td>
-				<td>
-					<i class="fi fi-br-trash-xmark table__trash"></i>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img src="{% static 'images/Product-07-01.jpg' %}" alt="" class="table__image">
-				</td>
-				<td>
-					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
-					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
-				</td>
-				<td>
-					<span class="table__price">&dollar;764.55</span>
-				</td>
-				<td>
-					<input type="number" class="table__quantity" value="5" />
-				</td>
-				<td>
-					<span class="table__sub__total">&dollar;6546.78</span>
-				</td>
-				<td>
-					<i class="fi fi-br-trash-xmark table__trash"></i>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img src="{% static 'images/Product-09-01.jpg' %}" alt="" class="table__image">
-				</td>
-				<td>
-					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
-					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
-				</td>
-				<td>
-					<span class="table__price">&dollar;764.55</span>
-				</td>
-				<td>
-					<input type="number" class="table__quantity" value="5" />
-				</td>
-				<td>
-					<span class="table__sub__total">&dollar;6546.78</span>
-				</td>
-				<td>
-					<i class="fi fi-br-trash-xmark table__trash"></i>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img src="{% static 'images/Product-13-01.jpg' %}" alt="" class="table__image">
-				</td>
-				<td>
-					<h3 class="table__title">Lorem ipsum dolor sit amet</h3>
-					<p class="table__description">Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Ratione.</p>
-				</td>
-				<td>
-					<span class="table__price">&dollar;764.55</span>
-				</td>
-				<td>
-					<input type="number" class="table__quantity" value="5" />
-				</td>
-				<td>
-					<span class="table__sub__total">&dollar;6546.78</span>
-				</td>
-				<td>
-					<i class="fi fi-br-trash-xmark table__trash"></i>
-				</td>
-			</tr>
+			{% endfor %}
 		</table>
 	</div>
 	<div class="bag__actions">
-		<a href="#" class="btn btn__medium display__flex">
+		<a href="{% url 'Bags:UpdateBagItemUrl' %}" class="btn btn__medium display__flex">
 			<i class="fi fi-br-shuffle"></i> Update Bag
 		</a>
 		<a href="{% url 'Products:AllProductsUrl' %}" class="btn btn__medium display__flex">
@@ -188,7 +108,7 @@
 					</td>
 				</tr>
 			</table>
-			<a href="{% url 'Bags:CheckOutUrl' %}" class="btn display__flex btn__medium">
+			<a href="#" class="btn display__flex btn__medium">
 				<i class="fi fi-br-box-alt"></i> Go To Checkout
 			</a>
 		</div>

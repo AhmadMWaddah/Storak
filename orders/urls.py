@@ -1,9 +1,10 @@
 from django.urls import path
-from .orders import CheckOutView
 
+# from .orders import OrderCreateView
 
 app_name = "Orders"
 
+
 urlpatterns = [
-    path("checkout", CheckOutView.as_view(), name="CheckOutUrl"),
+    #    path("order-details", OrderCreateView.as_view(), name="OrderDetailsUrl"),
 ]
