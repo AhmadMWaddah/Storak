@@ -56,7 +56,7 @@
 							<span class="old__price">&dollar;{{ trends_product.price_before }}</span>
 							{% endif %}
 						</div>
-						<a href="#" class="bag__button" aria-label="Add To Bag">
+						<a href="{% url 'Bags:AddToBagUrl' trends_product.slug %}" class="bag__button" aria-label="Add To Bag">
 							<i class="fi fi-br-shopping-bag-add"></i>
 						</a>
 					</div>
@@ -114,7 +114,7 @@
 							<span class="old__price">&dollar;{{ feat_product.price_before }}</span>
 							{% endif %}
 						</div>
-						<a href="#" class="bag__button" aria-label="Add To Bag">
+						<a href="{% url 'Bags:AddToBagUrl' feat_product.slug %}" class="bag__button" aria-label="Add To Bag">
 							<i class="fi fi-br-shopping-bag-add"></i>
 						</a>
 					</div>
@@ -172,7 +172,7 @@
 							<span class="old__price">&dollar;{{ best_product.price_before }}</span>
 							{% endif %}
 						</div>
-						<a href="#" class="bag__button" aria-label="Add To Bag">
+						<a href="{% url 'Bags:AddToBagUrl' best_product.slug %}" class="bag__button" aria-label="Add To Bag">
 							<i class="fi fi-br-shopping-bag-add"></i>
 						</a>
 					</div>

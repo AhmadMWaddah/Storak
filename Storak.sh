@@ -2,27 +2,32 @@
 
 function POSTGRESQL() {
 	systemctl restart postgresql
-	echo "----------------------------------------------------------------------	PostgreSQL Starting Finished.			 -----------------"
-	echo "                               "
+	echo "                                                                                                                            "
+	echo "--------------------------------------------------------------------------------------------------		PostgreSQL Starting Finished."
+	echo "                                                                                                                            "
 }
 function COLLECTSTATIC() {
 	python3 manage.py collectstatic --no-input
-	echo "----------------------------------------------------------------------	Collect Static Finished.			 -----------------"
-	echo "                               "
+	echo "                                                                                                                            "
+	echo "--------------------------------------------------------------------------------------------------		Collect Static Finished."
+	echo "                                                                                                                            "
 }
 function MAKEMIGRATIONS() {
 	python3 manage.py makemigrations
-	echo "----------------------------------------------------------------------	Makemigrations Models Finished.			 -----------------"
-	echo "                               "
+	echo "                                                                                                                            "
+	echo "--------------------------------------------------------------------------------------------------		Makemigrations Models Finished."
+	echo "                                                                                                                            "
 }
 function MIGRATE() {
 	python3 manage.py migrate
-	echo "----------------------------------------------------------------------	Migrated Models Finished.			 -----------------"
-	echo "                               "
+	echo "                                                                                                                            "
+	echo "--------------------------------------------------------------------------------------------------		Migrated Models Finished.	"
+	echo "                                                                                                                            "
 }
 function RUNSERVER() {
 	python3 manage.py runserver 127.0.0.1:7560
-	echo "----------------------------------------------------------------------	Server Started Now.			 -----------------"
+	echo "                                                                                                                            "
+	echo "--------------------------------------------------------------------------------------------------		Server Started Now."
 }
 function STORAK() {
 	POSTGRESQL

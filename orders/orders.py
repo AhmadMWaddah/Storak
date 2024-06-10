@@ -1,10 +1,17 @@
-from django.views.generic.base import TemplateView
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+from django.contrib.auth.decorators import login_required
+from .models import Order
 
 
-class CheckOutView(TemplateView):
-    template_name = "bags/checkout.html"
+# class OrderCreateView(CreateView):
+#     model = Order
+#     form_class = OrderCreateForm
+#     success_url = reverse_lazy('Orders:OrderDetailsUrl')
 
-    def get_context_data(self, **kwargs):
-        context = super(CheckOutView, self).get_context_data(**kwargs)
-        context["page"] = "Checkout"
-        return context
+#     @login_required
+#     def dispatch(self, request, *args, **kwargs):
+#         return super(OrderCreateView, self).dispatch(request, *args, **kwargs)
+
+#     def form_valid(self, form):

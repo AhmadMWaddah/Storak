@@ -53,7 +53,7 @@
 						<span class="old__price">&dollar;{{ product.price_before }}</span>
 						{% endif %}
 					</div>
-					<a href="#" class="bag__button" aria-label="Add To Bag">
+					<a href="{% url 'Bags:AddToBagUrl' product.slug %}" class="bag__button" aria-label="Add To Bag">
 						<i class="fi fi-br-shopping-bag-add"></i>
 					</a>
 				</div>
